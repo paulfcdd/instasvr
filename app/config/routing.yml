@@ -1,3 +1,7 @@
+instasaver_index_en:
+    resource: "@InstasaverIndexEnBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

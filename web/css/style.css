@@ -1,0 +1,83 @@
+@font-face {
+    font-family: instasaver;
+    src: url("../fonts/billabong.ttf");
+}
+
+@font-face {
+    font-family: segoe;
+    src: url("../fonts/segoeui.ttf");
+}
+
+*{
+    font-family:segoe;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+}
+
+.wrapper {
+    display: table;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    font: 14px/20px Arial, sans-serif;
+
+}
+
+.header {
+    height: 80px;
+    /*background: #3498DB;*/
+    padding-top: 2%;
+    /*padding: 0;*/
+}
+
+.logo-left-text {
+    font-family: instasaver;
+    font-size: 48px;
+    padding-top: 7%;
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px black;
+}
+
+.login-buttons {
+
+}
+
+.content {
+    display: table-row;
+    height: 100%;
+    /*background: whitesmoke;*/
+    /*opacity: 0.8;*/
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.big-logo {
+    font-size: 96px;
+    font-family: instasaver;
+    color: whitesmoke;
+    padding-bottom: 5%;
+    text-shadow: 1px 1px 1px black;
+}
+.content-fluid {
+    width: 80%;
+    position:absolute;
+    top:40%;
+}
+
+.footer {
+    height: 80px;
+    /*background: #3498DB;*/
+}
+
+.footer-text {
+    font-size: 18px;
+    font-family: segoe;
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px black;
+}

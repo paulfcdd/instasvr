@@ -1,0 +1,3 @@
+instasaver_index_en_homepage:
+    path:     /
+    defaults: { _controller: InstasaverIndexEnBundle:Index:index }

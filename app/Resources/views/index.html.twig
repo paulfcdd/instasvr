@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Instasaver</title>
+    <link rel="shortcut icon" href="{{ asset('images/icon.ico') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+</head>
+{% block body %}
+<body>
+{% block wrapper %}
+<div class="wrapper">
+    {% block header %}
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <p class="text-left logo-left-text">Instasaver</p>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <div class="btn-group pull-right login-buttons" id="loginbts"></div>
+                    <script type="text/javascript">
+                        var $screenWidth = document.documentElement.clientWidth;
+                        var $buttons = document.getElementById('loginbts');
+                        if ($screenWidth >= 1290) {
+                            $buttons.innerHTML = '<button class="btn btn-success">{{ sign_in }}</button><button class="btn btn-primary" data-toggle="modal" data-target="#modalSignUp">{{ sign_up }}</button>';
+                        }
+                        if ($screenWidth <= 1290){
+                            $buttons.innerHTML = '<button type="button" class="btn btn-success">{{ join }}</button> <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button> <ul class="dropdown-menu" role="menu"> <li><a href="#">{{ sign_in }}</a></li> <li><a href="#" data-toggle="modal" data-target="#modalSignUp" >{{ sign_up }}</a></li> </ul>';
+                        }
+                    </script>
+                    <div id="modalSignUp" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title"><p class="text-center">{{ sign_up_modal_h4_text }}</p></h4>
+                                    <p class="text-center">{{ sign_up_modal_sub_text }}</p>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2"> <label>{{ sign_up_modal_email_label }}</label></div>
+                                            <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10"><input type="text"></div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2"> <label>{{ sign_up_modal_username_label }}</label></div>
+                                            <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10"><input type="text"></div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2"> <label>{{ sign_up_modal_password_label }}</label></div>
+                                            <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10"><input type="text"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success pull-left" data-dismiss="modal">{{ sign_up_modal_ok_button }}</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{ sign_up_modal_close_button }}</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {% endblock %}
+    {% block content %}
+    <div class="content" style="align: center;">
+
+        <div class="container-fluid content-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" ></div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" >
+                    <p class="text-center big-logo">{{ content_logo }}</p>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" ></div>
+            </div>
+
+            <div class="row" >
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" ></div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" >
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="{{ content_input_placeholder }}">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-download"></span> {{ content_get_button }}</button>
+                            </span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" ></div>
+            </div>
+        </div>
+
+    </div><!-- .content -->
+    {% endblock %}
+    {% block footer %}
+ <div class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+                <p class="text-left footer-text">{{ footer_about_us }}</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+                <p class="text-center footer-text">{{ footer_faq }}</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+                <p class="text-center footer-text">{{ footer_blog }}</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+                <p class="text-right footer-text">{{ footer_donation }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</div><!-- .wrapper -->
+{% endblock %}
+</body>
+{% endblock %}
+</html>
