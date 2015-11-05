@@ -17,16 +17,3 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
-	/*from parameters.yml*/
-# This file is auto-generated during the composer install
-parameters:
-    database_host: 127.0.0.1
-    database_port: null
-    database_name: symfony
-    database_user: root
-    database_password: null
-    mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: null
-    mailer_password: null
-    secret: 9ac8e3a0f6dbceade52f069ede97f992aebaf8c1

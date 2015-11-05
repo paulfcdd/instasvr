@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Instasaver</title>
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery.js')}}"></script>
 </head>
 {% block body %}
 <body>
@@ -21,7 +22,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                    <p class="text-left logo-left-text">Instasaver</p>
+                    <a href="/instasaver/web/app_dev.php" style="text-decoration: none;"><p class="text-left logo-left-text">Instasaver</p></a>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -36,41 +37,154 @@
                             $buttons.innerHTML = '<button type="button" class="btn btn-success">{{ join }}</button> <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button> <ul class="dropdown-menu" role="menu"> <li><a href="#">{{ sign_in }}</a></li> <li><a href="#" data-toggle="modal" data-target="#modalSignUp" >{{ sign_up }}</a></li> </ul>';
                         }
                     </script>
-                    <div id="modalSignUp" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
+					<div id="modalSignUp" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title"><p class="text-center">{{ sign_up_modal_h4_text }}</p></h4>
                                     <p class="text-center">{{ sign_up_modal_sub_text }}</p>
                                 </div>
-                                <div class="modal-body">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2"> <label>{{ sign_up_modal_email_label }}</label></div>
-                                            <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10"><input type="text"></div>
-                                        </div>
-                                        <br />
-                                        <div class="row">
-                                            <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2"> <label>{{ sign_up_modal_username_label }}</label></div>
-                                            <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10"><input type="text"></div>
-                                        </div>
-                                        <br />
-                                        <div class="row">
-                                            <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2"> <label>{{ sign_up_modal_password_label }}</label></div>
-                                            <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10"><input type="text"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-success pull-left" data-dismiss="modal">{{ sign_up_modal_ok_button }}</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{ sign_up_modal_close_button }}</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+								<div class="modal-body">
+									<div class="container">
+										<!--email field-->
+										<div class="col-lg-2 col-sm-2 col-md-2 col-xs-2"> 
+											<label>{{ sign_up_modal_email_label }}</label>
+										</div>
+                                        <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10">
+											<input id="email" onkeyup="chekEmail()" type="email" required>
+										</div>
+										<div class="col-md-12"><p style="color: red;" id="emailNotif"></p></div>
+										<div class="col-md-12"><p style="color: red;" id="emailBusy"></p></div>
+										<!--username field-->
+										<div class="col-lg-2 col-sm-2 col-md-2 col-xs-2">
+											<label>{{ sign_up_modal_username_label }}</label>
+										</div>
+                                        <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10">
+											<input id="username" onkeyup="chekUsername()" type="text">
+										</div>
+										<div class="col-md-12"><p style="color: red;" id="userNotif"></p></div>
+										<div class="col-md-12"><p style="color: red;" id="userBusy"></p></div>
+										<!--password field-->
+										<div class="col-lg-2 col-sm-2 col-md-2 col-xs-2"> 
+											<label>{{ sign_up_modal_password_label }}</label>
+										</div>
+										<div class="col-lg-10 col-sm-10 col-md-10 col-xs-10">
+											<input id="password" onkeyup="checkPass()" type="password" required>
+										</div>
+										<div class="col-md-12"><p style="color: red;" id="passNotif"></p></div>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-success pull-left" id="register">{{ sign_up_modal_ok_button }}</button>
+									<button type="button" class="btn btn-danger" data-dismiss="modal">{{ sign_up_modal_close_button }}</button>
+									<script>
+										$("#username").attr('disabled', true);
+										$("#password").attr('disabled', true);
+										$("#userNotif").attr('disabled',true);
+										$("#userBusy").attr('disabled',true);
+										$("#passNotif").attr('disabled',true);
+										$("#register").attr('disabled',true);
+										var pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i; //name-_09@mail09-.ru
+										
+										function chekEmail () {
+										var mail = $("#email").val();
+										if(mail != ''){
+											if(mail.search(pattern) == 0){
+												$.ajax ({
+													type: "post",
+													url: "{{path('instasaver_index_en_checkemail_ajax')}}",
+													data: {
+														email: mail,
+													}, 
+													success: function(data){
+														if (data == 1) {
+															$("#username").attr('disabled', false);
+															$("#emailNotif").attr('hidden', true);
+															$("#emailBusy").attr('hidden', true);
+														}
+														if (data == 0) {
+														$("#emailNotif").attr('hidden', true);
+														$("#emailBusy").html('{{email_busy}}');
+														}
+													}
+												});
+											}	else	{
+													$("#username").attr('disabled', true);
+													$("#emailNotif").html('{{invalid_email}}');
+												}
+											}else{
+													$("#username").attr('disabled', true);
+													$("#emailNotif").html('{{email_not_empty}}');
+											}
+										}
+										
+										function chekUsername () {
+										var user = $("#username").val();
+										console.log(user.length);
+										if (user != '') {
+											if (user.length < 4) {
+												$("#userNotif").html('{{username_notification}}');
+											} else {
+											
+											$.ajax ({
+													type: "post",
+													url: "{{path('instasaver_index_en_checkuser_ajax')}}",
+													data: {
+														user: user,
+													}, 
+													success: function(data){
+														if (data == 1) {
+															$("#userNotif").html('');
+															$("#userBusy").html('');
+															$("#password").attr('disabled', false);
+														}
+														if (data == 0) {
+														$("#userNotif").attr('hidden', true);
+														$("#userBusy").html('{{user_busy}}');
+														}
+													}
+												});
+											}
+										}
+									}
+									
+									function checkPass () { 
+										var pass = $("#password").val();
+										
+										if (pass !='') {
+											if (pass.length < 4) {
+												$("#passNotif").html('{{pass_notification}}');
+											} else {
+												$("#passNotif").html('');
+												$("#register").attr('disabled',false);
+											}
+										}
+									}
+									
+									$("#register").click(function() {
+                                            var $email = $("#email").val();
+                                            var $username = $("#username").val();
+                                            var $password = $("#password").val();
+											$.ajax ({
+												type: "post",
+												url: "{{path('instasaver_index_en_reg_ajax')}}",
+												data: {
+													email: $email,
+													username: $username,
+													password: $password
+												}, 
+												success: function(data){
+												alert(data);
+												}
+											});
+                                        });
+									
+									</script>
+								</div>
+							</div>
+						</div>
+					</div>
                 </div>
             </div>
         </div>
@@ -93,10 +207,62 @@
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" ></div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" >
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="{{ content_input_placeholder }}">
+                        <input type="text" class="form-control" id="urlField" placeholder="{{ content_input_placeholder }}">
                             <span class="input-group-btn">
-                                <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-download"></span> {{ content_get_button }}</button>
+                                <button class="btn btn-primary" onclick="getUrl()" type="button" data-toggle="modal" data-target="#showResult">
+									<span class="glyphicon glyphicon-download"></span> {{ content_get_button }}
+								</button>
                             </span>
+							<script>
+							function getUrl() {
+							var $url = $("#urlField").val();
+							$.ajax ({
+									type: "post",
+									url: "{{path('instasaver_index_en_geturl_ajax')}}",
+									data: {
+										url: $url
+									}, 
+									success: function(data){
+									$("#instaPhoto").html('<img id="imageResult" src='+data+' width=500 height=500>');
+									
+									}
+								});
+							delete url;	
+							}
+						</script>
+							<div id="showResult" class="modal fade" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">Take your photo</h4>
+									</div>
+									<div class="modal-body">
+										<div class="container">
+											<div class="row">
+												<div class="col-md-8" id="instaPhoto"></div>
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" onclick="savePhoto()" class="btn btn-success pull-left" id="saveButton">
+											<span class="glyphicon glyphicon-save"></span> {{ save_button }}
+										</button>
+										<button type="button" class="btn btn-danger" data-dismiss="modal">{{ sign_up_modal_close_button }}</button>
+										<script>
+											function savePhoto() {
+												var image = $("#imageResult").attr('src');
+												var link = document.createElement('a');
+												link.target = "_blank";
+												link.download = "img.jpg";
+												link.href =image;
+												link.click();
+											}
+										</script>
+									</div>
+								</div>
+							</div>
+						</div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" ></div>

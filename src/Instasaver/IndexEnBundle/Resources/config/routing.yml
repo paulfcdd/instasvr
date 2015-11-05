@@ -1,3 +1,19 @@
 instasaver_index_en_homepage:
     path:     /
-    defaults: { _controller: InstasaverIndexEnBundle:Index:index }
+    defaults: { _controller: InstasaverIndexEnBundle:IndexEn:index }
+
+instasaver_index_en_reg_ajax:
+    path:     /reg
+    defaults: { _controller: InstasaverIndexEnBundle:IndexEn:reg }
+
+instasaver_index_en_checkemail_ajax:
+   path:     /check
+   defaults: { _controller: InstasaverIndexEnBundle:IndexEn:checkemail }
+   
+instasaver_index_en_checkuser_ajax: 
+   path:	/checkuser
+   defaults: { _controller: InstasaverIndexEnBundle:IndexEn:checkusername }
+
+instasaver_index_en_geturl_ajax: 
+   path:	/geturl
+   defaults: { _controller: InstasaverIndexEnBundle:IndexEn:geturl }   
