@@ -31,12 +31,41 @@
                         var $screenWidth = document.documentElement.clientWidth;
                         var $buttons = document.getElementById('loginbts');
                         if ($screenWidth >= 1290) {
-                            $buttons.innerHTML = '<button class="btn btn-success">{{ sign_in }}</button><button class="btn btn-primary" data-toggle="modal" data-target="#modalSignUp">{{ sign_up }}</button>';
+                            $buttons.innerHTML = '<button class="btn btn-success" data-toggle="modal" data-target="#modalSignIn">{{ sign_in }}</button><button class="btn btn-primary" data-toggle="modal" data-target="#modalSignUp">{{ sign_up }}</button>';
                         }
                         if ($screenWidth <= 1290){
                             $buttons.innerHTML = '<button type="button" class="btn btn-success">{{ join }}</button> <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button> <ul class="dropdown-menu" role="menu"> <li><a href="#">{{ sign_in }}</a></li> <li><a href="#" data-toggle="modal" data-target="#modalSignUp" >{{ sign_up }}</a></li> </ul>';
                         }
                     </script>
+					<div id="modalSignIn" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+						<div class="modal-content">
+							 <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title"><p class="text-center">{{ sign_up_modal_h4_text }}</p></h4>
+                                    <p class="text-center">{{ sign_up_modal_sub_text }}</p>
+                                </div>
+							 <div class="modal-body">
+								<form role="form" action="{{path('login_check')}}" method="post">
+								  <div class="form-group">
+									<label for="email">{{sign_in_modal_user_label}}</label>
+									<input type="text" class="form-control" id="userSignIn" required>
+								  </div>
+								  <div class="form-group">
+									<label for="password">{{sign_in_modal_password_label}}</label>
+									<input type="password" class="form-control" id="passwordSignIn" required>
+								  </div>
+							 </div>
+							 <div class="modal-footer">
+							  <button type="submit" class="btn btn-success pull-left" id="login">{{ sign_up_modal_ok_button }}</button>
+							  <button type="button" class="btn btn-danger" data-dismiss="modal">{{ sign_up_modal_close_button }}</button>
+								</form>
+							 </div>
+							</div>
+
+					  </div>
+					</div>
+					
 					<div id="modalSignUp" class="modal fade" role="dialog">
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -135,8 +164,8 @@
 													}, 
 													success: function(data){
 														if (data == 1) {
-															$("#userNotif").html('');
-															$("#userBusy").html('');
+															$("#userNotif").attr('hidden', true);
+															$("#userBusy").attr('hidden', true);
 															$("#password").attr('disabled', false);
 														}
 														if (data == 0) {
@@ -215,19 +244,20 @@
                             </span>
 							<script>
 							function getUrl() {
-							var $url = $("#urlField").val();
-							$.ajax ({
-									type: "post",
-									url: "{{path('instasaver_index_en_geturl_ajax')}}",
-									data: {
-										url: $url
-									}, 
-									success: function(data){
-									$("#instaPhoto").html('<img id="imageResult" src='+data+' width=500 height=500>');
-									
-									}
-								});
-							delete url;	
+								var url = $("#urlField").val();
+								$("#loader").show();
+								$.ajax ({
+										type: "post",
+										url: "{{path('instasaver_index_en_geturl_ajax')}}",
+										data: {
+											url: url
+										}, 
+										success: function(data){
+										$("#loader").hide();
+										$("#instaPhoto").html('<img id="imageResult" src='+data+' width=500 height=500>');
+										
+										}
+									});
 							}
 						</script>
 							<div id="showResult" class="modal fade" role="dialog">
@@ -238,9 +268,11 @@
 										<h4 class="modal-title">Take your photo</h4>
 									</div>
 									<div class="modal-body">
-										<div class="container">
+										<div class="container" style="width: 100%;">
 											<div class="row">
-												<div class="col-md-8" id="instaPhoto"></div>
+												<div class="col-md-12 text-center" id="instaPhoto">
+													<img id="loader" src="{{ asset('images/loader.gif') }}">
+												</div>
 											</div>
 										</div>
 									</div>

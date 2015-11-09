@@ -37,7 +37,10 @@ class IndexEnController extends Controller
 			'pass_notification'				=> 'Password must contains minimum 4 chars',
 			'email_busy'					=> 'Email already in use',
 			'user_busy'						=> 'User with this username was registred',
-			'save_button'					=> 'Save'
+			'save_button'					=> 'Save',
+			'sign_in_modal_user_label' 		=> 'Enter Your username',
+			'sign_in_modal_password_label'	=> 'Enter Your password'
+			
         ));
     }
 
@@ -97,7 +100,5 @@ class IndexEnController extends Controller
         }
         $html->clear();
         unset($html);
-		
-		
 	}
 }

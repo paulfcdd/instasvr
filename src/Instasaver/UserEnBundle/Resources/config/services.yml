@@ -1,0 +1,4 @@
+services:
+#    instasaver_user_en.example:
+#        class: Instasaver\UserEnBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

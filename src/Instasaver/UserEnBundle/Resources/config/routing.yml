@@ -1,0 +1,5 @@
+instasaver_user_en_homepage:
+    path:     /id{id_num}
+    defaults: { _controller: InstasaverUserEnBundle:UserEn:index }
+    requirements: 
+        id_num: \d+ 

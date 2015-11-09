@@ -1,3 +1,7 @@
+instasaver_user_en:
+    resource: "@InstasaverUserEnBundle/Resources/config/routing.yml"
+    prefix:   /
+
 instasaver_index_en:
     resource: "@InstasaverIndexEnBundle/Resources/config/routing.yml"
     prefix:   /
