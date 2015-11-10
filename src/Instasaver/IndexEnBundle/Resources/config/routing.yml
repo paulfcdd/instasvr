@@ -16,11 +16,7 @@ instasaver_index_en_checkuser_ajax:
 
 instasaver_index_en_geturl_ajax: 
    path:	/geturl
-   defaults: { _controller: InstasaverIndexEnBundle:IndexEn:geturl }   
+   defaults: { _controller: InstasaverIndexEnBundle:IndexEn:geturl }
 
-login:
-    pattern:   /
-    defaults:  { _controller: InstasaverIndexEnBundle:Security:login }
-
-login_check:
-    pattern:   /login_check
+logout:
+    path: /logout   

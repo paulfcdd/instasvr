@@ -19,7 +19,9 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new Instasaver\IndexEnBundle\InstasaverIndexEnBundle(),
-            new Instasaver\UserEnBundle\InstasaverUserEnBundle()
+            new Instasaver\UserEnBundle\InstasaverUserEnBundle(),
+            new Instasaver\AdminBundle\AdminBundle(),
+            new Instasaver\LoginEnBundle\LoginEnBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

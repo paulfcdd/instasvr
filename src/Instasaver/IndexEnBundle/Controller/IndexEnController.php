@@ -1,7 +1,7 @@
 <?php 
 
 namespace Instasaver\IndexEnBundle\Controller;
-use Instasaver\IndexEnBundle\Entity\Register;
+use Instasaver\IndexEnBundle\Entity\User;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,6 +12,9 @@ class IndexEnController extends Controller
 {
     public function indexAction()
     {
+		//$user = $this->get('security.token_storage')->getToken()->getUser();
+		//$userId = $user->getId();
+		
 		
         return $this->render('::index.html.twig', array(
             'sign_in'                       => 'Sign in',
@@ -39,8 +42,7 @@ class IndexEnController extends Controller
 			'user_busy'						=> 'User with this username was registred',
 			'save_button'					=> 'Save',
 			'sign_in_modal_user_label' 		=> 'Enter Your username',
-			'sign_in_modal_password_label'	=> 'Enter Your password'
-			
+			'sign_in_modal_password_label'	=> 'Enter Your password'		
         ));
     }
 
@@ -48,14 +50,14 @@ class IndexEnController extends Controller
 		$request = $this->container->get('request');
 		$email = $request->get('email');     
 		$username = $request->get('username');     
-		$password = $request->get('password'); 
+		$password = password_hash($request->get('password'), PASSWORD_DEFAULT); 
 	   
 	   //AJAX request from Index
 	   
-		$reg = new Register();
+		$reg = new User();
 		$reg->setEmail($email);
 		$reg->setUsername($username);
-		$reg->setPassword(sha1($password));
+		$reg->setPassword($password);
 		
 		
 		$em = $this->getDoctrine()->getEntityManager();
@@ -68,7 +70,7 @@ class IndexEnController extends Controller
 	public function checkemailAction() {
 		$request = $this->container->get('request');
 		$email = $request->get('email'); 
-		$repository = $this->getDoctrine()->getRepository('InstasaverIndexEnBundle:Register');
+		$repository = $this->getDoctrine()->getRepository('InstasaverIndexEnBundle:User');
 		$resultEmail = $repository->findOneByEmail($email);
 		if ($resultEmail == null) {
 			return new Response( 1 );
@@ -80,7 +82,7 @@ class IndexEnController extends Controller
 	public function checkusernameAction() {
 		$request = $this->container->get('request');
 		$user = $request->get('user');  
-		$repository = $this->getDoctrine()->getRepository('InstasaverIndexEnBundle:Register');
+		$repository = $this->getDoctrine()->getRepository('InstasaverIndexEnBundle:User');
 		$resultUser = $repository->findOneByUsername($user);
 		if ($resultUser == null) {
 			return new Response( 1 );

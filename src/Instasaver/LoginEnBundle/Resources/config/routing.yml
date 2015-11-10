@@ -1,0 +1,7 @@
+login_en_homepage:
+    path:     /login
+    defaults: { _controller: LoginEnBundle:LoginEn:login }
+
+login_check_en:
+    path: /login_check
+    defaults: { _controller: LoginEnBundle:LoginEn:loginCheck }	

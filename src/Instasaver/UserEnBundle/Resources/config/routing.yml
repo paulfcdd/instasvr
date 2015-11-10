@@ -3,3 +3,7 @@ instasaver_user_en_homepage:
     defaults: { _controller: InstasaverUserEnBundle:UserEn:index }
     requirements: 
         id_num: \d+ 
+
+test_controller_en:
+    path: /testing
+    defaults: { _controller: InstasaverUserEnBundle:Test:index }

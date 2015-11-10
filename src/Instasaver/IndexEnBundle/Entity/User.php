@@ -1,9 +1,176 @@
-<?php
-
+<?php 
 namespace Instasaver\IndexEnBundle\Entity;
-use FOS\UserBundle\Model\User as FosUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
-class User extends FosUser{
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="users")
+ */
+class User implements AdvancedUserInterface, \Serializable {
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+	protected $id;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+	protected $email;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+	protected $username;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+	protected $password;
+
+	/**
+     * @ORM\Column(name="is_active", type="boolean")
+     */
+    private $isActive;
+
+    public function __construct()
+    {
+        $this->isActive = true;
+    }
 	
+	
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Register
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     *
+     * @return Register
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+	
+	 public function getSalt()
+    {
+        return null;
+    }
+	
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return Register
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+	
+	public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+	
+	public function eraseCredentials()
+    {
+    }
+	
+	 public function isAccountNonExpired()
+    {
+        return true;
+    }
+
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    public function isCredentialsNonExpired()
+    {
+        return true;
+    }
+
+    public function isEnabled()
+    {
+        return $this->isActive;
+    }
+	
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+			$this->isActive
+        ));
+    }
+
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+			$this->isActive
+        ) = unserialize($serialized);
+    }
 }

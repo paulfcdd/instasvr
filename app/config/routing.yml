@@ -1,3 +1,11 @@
+login_en:
+    resource: "@LoginEnBundle/Resources/config/routing.yml"
+    prefix:   /
+
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
 instasaver_user_en:
     resource: "@InstasaverUserEnBundle/Resources/config/routing.yml"
     prefix:   /
