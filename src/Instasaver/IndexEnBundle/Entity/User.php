@@ -26,7 +26,14 @@ class User implements AdvancedUserInterface, \Serializable {
      * @ORM\Column(type="string", length=255)
      */
 	protected $password;
-
+	 /**
+     * @ORM\Column(type="text") 
+     */
+	protected $userAbout;
+	/**
+     * @ORM\Column(type="string", length=3, options={"default":"en"})
+     */
+	protected $userLang;
 	/**
      * @ORM\Column(name="is_active", type="boolean")
      */
@@ -172,5 +179,77 @@ class User implements AdvancedUserInterface, \Serializable {
             $this->password,
 			$this->isActive
         ) = unserialize($serialized);
+    }
+
+    /**
+     * Set isActive
+     *
+     * @param boolean $isActive
+     *
+     * @return User
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
+
+        return $this;
+    }
+
+    /**
+     * Get isActive
+     *
+     * @return boolean
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
+    }
+
+    /**
+     * Set userAbout
+     *
+     * @param string $userAbout
+     *
+     * @return User
+     */
+    public function setUserAbout($userAbout)
+    {
+        $this->userAbout = $userAbout;
+
+        return $this;
+    }
+
+    /**
+     * Get userAbout
+     *
+     * @return string
+     */
+    public function getUserAbout()
+    {
+        return $this->userAbout;
+    }
+
+    /**
+     * Set userLang
+     *
+     * @param string $userLang
+     *
+     * @return User
+     */
+    public function setUserLang($userLang)
+    {
+        $this->userLang = $userLang;
+
+        return $this;
+    }
+
+    /**
+     * Get userLang
+     *
+     * @return string
+     */
+    public function getUserLang()
+    {
+        return $this->userLang;
     }
 }

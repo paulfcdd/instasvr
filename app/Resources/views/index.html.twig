@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% block head %}
 <head>
     <meta charset="UTF-8">
     <title>Instasaver</title>
@@ -12,7 +13,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/jquery.js')}}"></script>
+	<script>
+		var userLang = navigator.language || navigator.userLanguage; 
+		console.log ("The language is: " + userLang);
+	</script>
 </head>
+{% endblock %}
 {% block body %}
 <body>
 {% block wrapper %}
@@ -42,8 +48,8 @@
 						<div class="modal-content">
 							 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title"><p class="text-center">{{ sign_up_modal_h4_text }}</p></h4>
-                                    <p class="text-center">{{ sign_up_modal_sub_text }}</p>
+                                    <h4 class="modal-title"><p class="text-center">{{ sign_in_modal_h4_text }}</p></h4>
+                                    <p class="text-center">{{ sign_in_modal_sub_text }}</p>
                                 </div>
 							 <div class="modal-body">
 								<form role="form" action="{{ path('login_check_en') }}" method="post">
@@ -195,16 +201,21 @@
 									}
 									
 									$("#register").click(function() {
-                                            var $email = $("#email").val();
-                                            var $username = $("#username").val();
-                                            var $password = $("#password").val();
+                                            var email = $("#email").val();
+                                            var username = $("#username").val();
+                                            var password = $("#password").val();
+											/*console.log($email);
+											console.log($username);
+											console.log($password);
+											console.log(userLang);*/
 											$.ajax ({
 												type: "post",
 												url: "{{path('instasaver_index_en_reg_ajax')}}",
 												data: {
-													email: $email,
-													username: $username,
-													password: $password
+													email: email,
+													username: username,
+													password: password,
+													lang: userLang
 												}, 
 												success: function(data){
 												alert(data);

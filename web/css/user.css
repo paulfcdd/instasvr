@@ -1,0 +1,325 @@
+@font-face {
+    font-family: instasaver;
+    src: url("../fonts/billabong.ttf");
+}
+
+@font-face {
+    font-family: segoe;
+    src: url("../fonts/segoeuil.ttf");
+}
+
+*{
+    font-family:segoe;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    #background-image: url("../images/background.jpg");
+    #background-size: cover;
+}
+
+	.wrapper {
+		display: table;
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		background: white;
+		font: 14px/20px Arial, sans-serif;
+
+	}
+
+	.nopadding {
+	   padding: 0 !important;
+	   margin: 0 !important;
+	}
+	
+	.header:before {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+	
+	.header {
+		text-align: center;
+		height: 80px;
+		#background: #0571a2;
+		background: #133f4f;
+		#background: linear-gradient(to top, #133f4f , #0073a3 );
+		/*padding: 0;*/
+	}
+	
+	.logo a {
+		font-family: instasaver;
+		color: whitesmoke;
+		font-size: 2.5em;
+		text-decoration: none; 
+	}
+	
+	.logo a:hover {
+		font-family: instasaver;
+		color: whitesmoke;
+		font-size: 2.5em;
+		text-decoration: none; 
+	}
+	
+	/*.logo-left-text {
+		font-family: instasaver;
+		font-size: 40px;
+		color: whitesmoke;
+		text-shadow: 1px 1px 1px black;
+	}*/
+
+	.logout {
+		color: white !important;
+		font-size: 1.3em;
+		/*white-space: nowrap;*/
+	}
+	
+	.logout  a {
+		text-decoration: none;
+		color: whitesmoke;
+		/*white-space: nowrap;*/
+	}
+	
+	.logout  a:hover {
+		text-decoration: none;
+		color: whitesmoke;
+		/*white-space: nowrap;*/
+	}
+	
+	.buttonBox {
+		margin: -1.5% 0 0 0 !important;
+		padding: 0 0 0 0 !important;
+	}
+	
+	.content {
+		display: table-row;
+		height: 100%;
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+	}
+
+	.footer {
+		height: 80px;
+	}
+
+	.topheader {
+		width: 60% !important; 
+		display: inline-block;
+		vertical-align: middle;
+		#border: 1px solid black !important;
+	}
+
+	.userinfo {
+		width: 100%;
+		padding: 1% 0 1% 0;
+		background-image: url("../images/user_bg.png");
+		background-size: cover;
+	}
+	
+	
+
+	.infoblock {
+		width: 60% !important; 
+		margin: 3% 0 4% 0;
+		#border: 1px solid black !important;
+	}
+
+	#avatar {
+		width: 150px;
+		height: 150px;
+	}
+
+	.username {
+		font-size: 3em;
+		color: white;
+		margin: 0 0 0 5%;
+	}
+
+	.userInformation {
+		margin: 7% 0 0 5%;
+		font-size: 1.3em;
+		color: white;
+		
+	}
+	
+	.maininfoRow {
+		margin-bottom: 0.3%;
+	}
+	
+	
+	.editbutton {
+		text-decoration: none !important; 
+		margin: 4% 0 0 5%;
+		border: 2px solid whitesmoke !important;
+		width: 50%;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px !important;
+		background-image: none !important;
+		background-color: transparent !important;
+		#background-color: #686868 !important;
+	}
+	
+	.editbutton p {
+		font-size: 1em;
+		color: whitesmoke;
+	}
+	
+	.editbutton:hover {
+		border: 2px solid #d9d9d9 !important;	
+	}
+	
+	.editbutton:hover p {
+		color: #d9d9d9;
+	}
+	
+	.followbutton {
+		background-image: none !important;
+		border: none !important;
+		background-color: transparent !important;
+		text-decoration: none !important; 
+		margin: 4% 0 0 5%;
+		padding-top: 2% !important;
+		font-size: 1.3em;
+		border: 2px solid #66bd2b !important;
+		width: 50%;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px !important;
+		background-color: #66bd2b !important;
+	}
+	
+	.followbutton p {
+		font-size: 16px;
+		color: whitesmoke;
+	}
+	
+	.followbutton:hover {
+		background-color: #42bd2b !important;
+	}
+	
+	.maininfo {
+		padding: 0 0 7% 0;
+	}
+
+	.subinfo {
+		padding-top: 7% !important;
+		padding-bottom: 7% !important;
+		border-top: 1px solid white;
+		border-bottom: 1px solid white;
+	}
+
+	.upperText {
+		color: white;
+		font-size: 3em;
+		padding-bottom: 6%;
+	}
+
+	.lowerText {
+		color: white;
+		font-size: 1.3em;
+	}
+	
+	.editUserInfoModal {
+		width: 70% !important;
+		-webkit-border-radius: 0px !important;
+		-moz-border-radius: 0px !important;
+		border-radius: 0px !important; 
+	}
+	
+	.editInput {
+		width: 100% !important;
+	}
+	
+	.editTable {
+		#border: 1px solid black;
+		width: 100%;
+		
+	}
+	tr.editTableRow>td {
+		#border: 1px solid black;
+		padding: 1% 0 1% 0 !important;
+	}
+	
+/*MEDIA SETTINGS*/
+@media screen and (max-width: 381px) {
+.header:before {
+		content: '';
+		display: inline-block;
+		height: 1%;
+		vertical-align: middle;
+	}	
+}
+
+@media screen and (max-width: 992px) {
+	
+	.topheader {
+		width: 99% !important; 
+		display: inline-block;
+		vertical-align: middle;
+		#border: 1px solid black !important;
+	}
+	
+	.editbutton p {
+		font-size: 0.8em;
+		color: whitesmoke;
+	}
+	
+	.maininfoRow {
+		margin-bottom: 2%;
+	}
+	
+	.buttonBox {
+		margin: 0 0 0 0 !important;
+		padding: 0 0 0 0 !important;
+	}
+	
+	.upperText {
+		color: white;
+		font-size: 2.5em;
+		padding-bottom: 2%;
+	}
+	
+	.lowerText {
+		color: white;
+		font-size: 1em;
+	}
+
+	.username {
+		font-size: 2em;
+		margin: 0 0 0 5%;
+	}
+	
+	.logo-left-text {
+		font-family: instasaver;
+		font-size: 40px;
+		color: whitesmoke;
+		text-shadow: 1px 1px 1px black;
+		margin-top: 10%;
+	}
+	
+	.logoText {
+		padding-top: 1%;
+	}
+	
+	.userinfo {
+		width: 100%;
+		background-image: url("../images/user_bg.png");
+		background-size: cover;
+		padding: 1% 0 1% 0;
+	}
+
+	.infoblock {
+		width: 100% !important; 
+		margin: 7% 0 7% 0;
+	}
+	#avatar {
+		width: 75px;
+		height: 75px;
+	}
+}

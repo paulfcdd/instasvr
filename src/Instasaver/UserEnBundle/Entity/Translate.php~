@@ -1,0 +1,29 @@
+<?php
+namespace Instasaver\UserEnBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="translations")
+ */
+ 
+ class Translate {
+	/**
+	* @ORM\Id
+    * @ORM\Column(type="string", length=255)
+	*/	 
+	protected $keyword;
+	/**
+     * @ORM\Column(type="string", length=255)
+     */
+	protected $english;
+	/**
+     * @ORM\Column(type="string", length=255)
+     */
+	protected $polish;
+	/**
+     * @ORM\Column(type="string", length=255)
+     */
+	protected $russian;
+ }

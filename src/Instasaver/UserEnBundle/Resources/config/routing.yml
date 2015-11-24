@@ -7,3 +7,11 @@ instasaver_user_en_homepage:
 test_controller_en:
     path: /testing
     defaults: { _controller: InstasaverUserEnBundle:Test:index }
+
+instasaver_user_en_edit:
+    path: /editProfile
+    defaults: { _controller: InstasaverUserEnBundle:UserEn:editProfile }
+
+instasaver_user_en_get_cur_lang:
+   path: /getCurLang
+   defaults: { _controller: InstasaverUserEnBundle:UserEn:getCurrentLang }
