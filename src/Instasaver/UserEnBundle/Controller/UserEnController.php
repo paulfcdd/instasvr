@@ -142,7 +142,7 @@ class UserEnController extends Controller {
 					'account_settings' 		=> strtoupper(''),
 					'edit_profile_tab'		=> strtoupper(''),
 					'change_pass_tab' 		=> strtoupper(''),
-					'username_label' 		=> '',
+					'username_label' 		=> 'Login',
 					'email_label' 			=> '',
 					'about_label' 			=> '',
 					'language_label' 		=> '',
