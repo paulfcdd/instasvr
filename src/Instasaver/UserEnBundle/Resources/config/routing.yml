@@ -15,3 +15,7 @@ instasaver_user_en_edit:
 instasaver_user_en_get_cur_lang:
    path: /getCurLang
    defaults: { _controller: InstasaverUserEnBundle:UserEn:getCurrentLang }
+
+instasaver_user_en_change_pass:
+   path: /changePass
+   defaults: { _controller: InstasaverUserEnBundle:UserEn:changePass }

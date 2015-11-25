@@ -111,25 +111,52 @@
                                                             <button type="button" class="btn btn-danger" data-dismiss="modal">{{ close_btn }}</button>
                                                         </div>
                                                     </div>
+                                                    <!--CHANGE PASSWORD TAB-->
                                                     <div id="menu1" class="tab-pane fade">
                                                         <table class="editTable">
                                                             <tr class="editTableRow">
                                                                 <td><label for="oldPassword">{{ old_pass_lbl }}</label></td>
-                                                                <td><input type="text" class="form-control editInput nopadding" id="oldPassword"></td>
+                                                                <td><input type="password" class="form-control editInput nopadding" id="oldPassword"></td>
                                                             </tr>
                                                             <tr class="editTableRow">
                                                                 <td><label for="newPassword">{{ new_pass_lbl }}</label></td>
-                                                                <td><input type="text" class="form-control editInput nopadding" id="newPassword"></td>
+                                                                <td><input type="password" class="form-control editInput nopadding" id="newPassword"></td>
                                                             </tr>
                                                             <tr class="editTableRow">
                                                                 <td><label for="confimPassword">{{ confirm_pass_lbl }}</label></td>
-                                                                <td><input type="text" class="form-control editInput nopadding" id="confimPassword"></td>
+                                                                <td><input type="password" onkeyup="checkFields()" class="form-control editInput nopadding" id="confimPassword"></td>
                                                             </tr>
                                                         </table>
                                                         <div class="modal-footer">
-                                                            <button type="button" onclick=""class="btn btn-success pull-left" data-dismiss="modal">{{ save_btn }}</button>
+                                                            <button type="button" onclick="changePass()" id="changePass" class="btn btn-success pull-left" data-dismiss="modal">{{ save_btn }}</button>
                                                             <button type="button" class="btn btn-danger" data-dismiss="modal">{{ close_btn }}</button>
                                                         </div>
+                                                        <script>
+                                                            var oldpass = $("#oldPassword").val();
+                                                            var newpass = $("#newPassword").val();
+                                                            var confpass = $("#confimPassword").val();
+                                                            $("#changePass").attr('disabled', true)
+
+                                                            function checkFields() {
+                                                               console.log('test')
+                                                            }
+
+                                                            function changePass() {
+                                                                $.ajax({
+                                                                    type: "post",
+                                                                    url: "{{path('instasaver_user_en_change_pass')}}",
+                                                                    data: {
+                                                                        oldPassword: oldpass,
+                                                                        newPassword: newpass,
+                                                                        confimPassword: confpass
+                                                                    },
+                                                                    success: function(data){
+                                                                        alert('kek')
+                                                                    }
+                                                                });
+                                                                //console.log(oldpass+', '+newpass+', '+confpass)
+                                                            }
+                                                        </script>
                                                     </div>
                                                 </div>
                                             </div>

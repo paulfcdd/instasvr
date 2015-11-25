@@ -191,4 +191,8 @@ class UserEnController extends Controller {
 		return new Response( $currentLang );
 	}
 
+	public function changePassAction () {
+		return new Response( 'test');
+	}
+
 }
