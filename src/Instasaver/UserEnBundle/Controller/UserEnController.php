@@ -14,7 +14,7 @@ class UserEnController extends Controller {
 	public function indexAction($id_num) {
 		$user = $this->get('security.token_storage')->getToken()->getUser();
 		$userLang = $user->getUserLang();
-		//var_dump($userLang);
+		//var_dump($user);
 		$userCookie = array(
 			'name'		=> 'userLanguage',
 			'value'		=> $userLang,
@@ -80,7 +80,10 @@ class UserEnController extends Controller {
 					'new_pass_lbl' 			=> 'New password',
 					'confirm_pass_lbl' 		=> 'Confirm password',
 					'follow' 				=> 'FOLLOW',
-					'saved_photos' 			=> 'Saved photos'
+					'saved_photos' 			=> 'Saved photos',
+					'wrong_pass'			=> 'Old password is incorrect!',
+					'notmatch_pass'			=> 'Сheck the correctness of the password',
+					'pass_change_success'	=> 'Password was changed successfully!'
 				));
 				break;
 			case 'pl':
@@ -104,7 +107,10 @@ class UserEnController extends Controller {
 					'new_pass_lbl' 			=> 'Nowe hasło',
 					'confirm_pass_lbl' 		=> 'potwierdź hasło',
 					'follow' 				=> strtoupper('śledzić'),
-					'saved_photos' 			=> 'Zapisane zdjęcia'
+					'saved_photos' 			=> 'Zapisane zdjęcia',
+					'wrong_pass'			=> 'Podane stare hasło nie jest poprawne!',
+					'notmatch_pass'			=> 'Sprawdz poprawność podanego hasła',
+					'pass_change_success'	=> 'Hasło zostało zmienione pomyślnie!'
 				));
 				break;
 			case 'ru':
@@ -128,7 +134,10 @@ class UserEnController extends Controller {
 					'new_pass_lbl' 			=> 'Новый пароль',
 					'confirm_pass_lbl' 		=> 'Повторите пароль',
 					'follow' 				=> strtoupper('подписаться'),
-					'saved_photos' 			=> 'Сохраненные фотографии'
+					'saved_photos' 			=> 'Сохраненные фотографии',
+					'wrong_pass'			=> 'Неверно указан старый пароль!',
+					'notmatch_pass'			=> 'Проверьте правильность ввода пароля',
+					'pass_change_success'	=> 'Пароль был успешно сменен!'
 				));
 				break;
 			case 'es':
@@ -152,7 +161,10 @@ class UserEnController extends Controller {
 					'new_pass_lbl' 			=> '',
 					'confirm_pass_lbl' 		=> '',
 					'follow' 				=> strtoupper(''),
-					'saved_photos' 			=> ''
+					'saved_photos' 			=> '',
+					'wrong_pass'			=> 'Old password is incorrect!',
+					'notmatch_pass'			=> 'New password not match',
+					'pass_change_success'	=> 'SUCCESS'
 				));
 				break;
 		}
@@ -192,7 +204,34 @@ class UserEnController extends Controller {
 	}
 
 	public function changePassAction () {
-		return new Response( 'test');
+		$user = $this->get('security.token_storage')->getToken()->getUser();
+		$request = $this->container->get('request');
+		$userId = $user->getId();
+
+		$oldpass = $request->get('oldPassword');
+		$newpass = $request->get('newPassword');
+		$confpas = $request->get('confimPassword');
+		$currentPass = $user->getPassword();
+
+		/*comparison of passwords*/
+		if (password_verify($oldpass, $currentPass)) {
+			if ($newpass !== $confpas) {
+					return new Response( 'warning' );
+				} else {
+					$newpass = password_hash($newpass, PASSWORD_DEFAULT);
+					$em = $this->getDoctrine()->getEntityManager();
+					$update = $em->getRepository('InstasaverIndexEnBundle:User')->find($userId);
+					$update->setPassword($newpass);
+
+					$em->persist($update);
+					$em->flush();
+
+					return new Response( 'success' );
+			}
+		}  else {
+			return new Response( 'danger' );
+		}
+
 	}
 
 }
