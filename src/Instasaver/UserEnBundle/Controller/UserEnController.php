@@ -208,10 +208,24 @@ class UserEnController extends Controller {
 		$request = $this->container->get('request');
 		$userId = $user->getId();
 
+		$username = $user->getUsername();
+		$email	 = $user->getEmail();
 		$oldpass = $request->get('oldPassword');
 		$newpass = $request->get('newPassword');
 		$confpas = $request->get('confimPassword');
 		$currentPass = $user->getPassword();
+		/*Creat mail notification*/
+
+		$message = \Swift_Message::newInstance()
+					->setSubject('Test email')
+					->setFrom('notifications@instasaver.pl')
+					->setTo($email)
+					->setBody(
+						$this->renderView(
+							'emails\test.html.twig',
+							array('' => '')
+						), 'text/html'
+					);
 
 		/*comparison of passwords*/
 		if (password_verify($oldpass, $currentPass)) {
@@ -225,7 +239,7 @@ class UserEnController extends Controller {
 
 					$em->persist($update);
 					$em->flush();
-
+					//$this->get('mailer')->send($message);
 					return new Response( 'success' );
 			}
 		}  else {
