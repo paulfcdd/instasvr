@@ -44,8 +44,18 @@
         <div class="container infoblock">
             <div class="row maininfo">
                 <div class="col-xs-3">
-                    <img src="{{ asset('images/avatar.png') }}" id="avatar">
+                    <img src="{{ asset('images/avatar.png') }}" onmouseover="onMouseOver()" onmouseleave="onMouseLeave()" id="avatar">
                 </div>
+				<script>
+					console.log ($("#avatar").attr());
+					function onMouseOver() {
+						$("#avatar").css('opacity','0.5');
+					}
+					
+					function onMouseLeave() {
+						$("#avatar").css('opacity','1');
+					}
+				</script>
                 <div class="col-xs-9">
                     <div class="row">
                         <div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 maininfoRow" style="width: 100%;">
@@ -115,15 +125,17 @@
                                                     <div id="menu1" class="tab-pane fade">
                                                         <table class="editTable">
                                                             <tr class="editTableRow">
-                                                                <div class="alert alert-success" id="success" hidden>
-                                                                    <strong>Success!</strong> Indicates a successful or positive action.
-                                                                </div>
                                                                 <td colspan="2">
+																	<div class="alert alert-success" id="success" hidden>
+																		<!--SUCCESS ALERT-->
+																	</div>
                                                                     <div class="alert alert-danger" id="danger" hidden>
-                                                                        <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+																		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                                        <!--DANGER ALERT-->
                                                                     </div>
                                                                     <div class="alert alert-warning" id="warning" hidden>
-                                                                        <strong>Warning!</strong> Indicates a warning that might need attention.
+																		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                                        <!--WARNING ALERT-->
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -162,15 +174,15 @@
                                                                        // console.log(data)
                                                                         if (data == 'danger') {
                                                                             $("#danger").attr('hidden', false);
-                                                                            $("#danger").html('<strong>{{ wrong_pass }}</strong>')
+                                                                            $("#danger").html('<strong>{{ wrong_pass }}</strong><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>')
                                                                         }
                                                                         if (data == 'warning') {
                                                                             $("#warning").attr('hidden', false);
-                                                                            $("#warning").html('<strong>{{ notmatch_pass }}</strong>')
+                                                                            $("#warning").html('<strong>{{ notmatch_pass }}</strong><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>')
                                                                         }
                                                                         if (data == 'success') {
                                                                             $("#success").attr('hidden', false);
-                                                                            $("#success").html('<strong>{{ pass_change_success }}</strong>')
+                                                                            $("#success").html('<strong>{{ pass_change_success }}</strong><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>')
                                                                         }
                                                                     }
                                                                 });

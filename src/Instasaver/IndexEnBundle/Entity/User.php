@@ -35,6 +35,10 @@ class User implements AdvancedUserInterface, \Serializable {
      */
 	protected $userLang;
 	/**
+	* @ORM\Column(type="string", length=255)
+	*/
+	protected $userAvatar;
+	/**
      * @ORM\Column(name="is_active", type="boolean")
      */
     private $isActive;
@@ -252,4 +256,16 @@ class User implements AdvancedUserInterface, \Serializable {
     {
         return $this->userLang;
     }
+	
+	public function setUserAvatar() {
+		
+		return $this->userAvatar = $userAvatar;
+		
+		return $this;
+	}
+	
+	public function getUserAvatar() {
+		
+		return $this->userAvatar;
+	}
 }

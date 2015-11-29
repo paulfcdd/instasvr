@@ -156,7 +156,7 @@ html, body {
 		text-decoration: none !important; 
 		margin: 4% 0 0 5%;
 		border: 2px solid whitesmoke !important;
-		width: 50%;
+		#width: 50%;
 		-webkit-border-radius: 15px;
 		-moz-border-radius: 15px;
 		border-radius: 15px !important;

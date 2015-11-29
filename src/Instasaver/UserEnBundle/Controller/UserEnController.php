@@ -13,6 +13,14 @@ class UserEnController extends Controller {
 
 	public function indexAction($id_num) {
 		$user = $this->get('security.token_storage')->getToken()->getUser();
+		$userId = $user->getId(); /*залогиненый юзер*/
+		$currentUserId = $id_num; /*айди юзера в адресной строке*/
+		$currentUserId = intval($currentUserId);
+		if ($userId == $currentUserId) {
+			$mainInfBtn = 1;
+		} else {
+			$mainInfBtn = 0;
+		}
 		$userLang = $user->getUserLang();
 		//var_dump($user);
 		$userCookie = array(
@@ -32,15 +40,10 @@ class UserEnController extends Controller {
 			throw $this->createNotFoundException('No user found for id '.$id_num);
 		}
 
-		$userId = $user->getId(); /*залогиненый юзер*/
-		$currentUserId = $id_num; /*айди юзера в адресной строке*/
-		$currentUserId = intval($currentUserId);
 
-		if ($userId == $currentUserId) {
-			$mainInfBtn = 1;
-		} else {
-			$mainInfBtn = 0;
-		}
+
+
+
 
 		$em = $this->getDoctrine()->getEntityManager();
 		$query = $em->createQuery(
@@ -51,7 +54,7 @@ class UserEnController extends Controller {
 
 		//$array = (array) $userTableInfo;
 		//var_dump($userTableInfo);
-
+		var_dump($user->getUserAvatar());
 		if ($userAbout == null) {
 			$userAboutTpl = '';
 		} else {
@@ -106,7 +109,7 @@ class UserEnController extends Controller {
 					'old_pass_lbl' 			=> 'Aktualne hasło',
 					'new_pass_lbl' 			=> 'Nowe hasło',
 					'confirm_pass_lbl' 		=> 'potwierdź hasło',
-					'follow' 				=> strtoupper('śledzić'),
+					'follow' 				=> 'ŚLEDZIĆ',
 					'saved_photos' 			=> 'Zapisane zdjęcia',
 					'wrong_pass'			=> 'Podane stare hasło nie jest poprawne!',
 					'notmatch_pass'			=> 'Sprawdz poprawność podanego hasła',
@@ -120,9 +123,9 @@ class UserEnController extends Controller {
 					'main_inf_btn'			=> $mainInfBtn,
 					'email'					=> $userTableInfo->getEmail(),
 					'userAboutTpl'			=> $userAboutTpl,
-					'edit_profile'			=> 'РЕДАКТИРОВАТЬ ПРОФИЛЬ',
+					'edit_profile'			=> 'НАСТРОЙКИ',
 					'account_settings' 		=> 'НАСТРОЙКИ ПРОФИЛЯ',
-					'edit_profile_tab'		=> 'РЕДАКТИРОВАТЬ ПРОФИЛЬ',
+					'edit_profile_tab'		=> 'РЕДАКТИРОВАТЬ ',
 					'change_pass_tab' 		=> 'СМЕНИТЬ ПАРОЛЬ',
 					'username_label' 		=> 'Логин',
 					'email_label' 			=> 'E-mail',
@@ -133,7 +136,7 @@ class UserEnController extends Controller {
 					'old_pass_lbl' 			=> 'Текущий пароль',
 					'new_pass_lbl' 			=> 'Новый пароль',
 					'confirm_pass_lbl' 		=> 'Повторите пароль',
-					'follow' 				=> strtoupper('подписаться'),
+					'follow' 				=> 'ПОДПИСАТЬСЯ',
 					'saved_photos' 			=> 'Сохраненные фотографии',
 					'wrong_pass'			=> 'Неверно указан старый пароль!',
 					'notmatch_pass'			=> 'Проверьте правильность ввода пароля',
@@ -147,21 +150,21 @@ class UserEnController extends Controller {
 					'main_inf_btn'			=> $mainInfBtn,
 					'email'					=> $userTableInfo->getEmail(),
 					'userAboutTpl'			=> $userAboutTpl,
-					'edit_profile'			=> strtoupper('Editar perfil'),
-					'account_settings' 		=> strtoupper(''),
-					'edit_profile_tab'		=> strtoupper(''),
-					'change_pass_tab' 		=> strtoupper(''),
-					'username_label' 		=> 'Login',
-					'email_label' 			=> '',
-					'about_label' 			=> '',
-					'language_label' 		=> '',
-					'save_btn' 				=> '',
-					'close_btn' 			=> '',
-					'old_pass_lbl' 			=> '',
-					'new_pass_lbl' 			=> '',
-					'confirm_pass_lbl' 		=> '',
-					'follow' 				=> strtoupper(''),
-					'saved_photos' 			=> '',
+					'edit_profile'			=> 'EDITAR DE PERFIL',
+					'account_settings' 		=> 'CONFIGURACIÓN DE LA CUENTA',
+					'edit_profile_tab'		=> 'EDITAR DE PERFIL',
+					'change_pass_tab' 		=> 'CAMBIAR CONTRASEÑA',
+					'username_label' 		=> 'Usuario',
+					'email_label' 			=> 'Email',
+					'about_label' 			=> 'Acerca de ti',
+					'language_label' 		=> 'Idioma',
+					'save_btn' 				=> 'Guardar',
+					'close_btn' 			=> 'Cerca',
+					'old_pass_lbl' 			=> 'Contraseña antigua',
+					'new_pass_lbl' 			=> 'Contraseña nueva',
+					'confirm_pass_lbl' 		=> 'Confirmar contraseña',
+					'follow' 				=> 'SEGUIR',
+					'saved_photos' 			=> 'Guardadas fotos',
 					'wrong_pass'			=> 'Old password is incorrect!',
 					'notmatch_pass'			=> 'New password not match',
 					'pass_change_success'	=> 'SUCCESS'
@@ -230,8 +233,10 @@ class UserEnController extends Controller {
 		/*comparison of passwords*/
 		if (password_verify($oldpass, $currentPass)) {
 			if ($newpass !== $confpas) {
+					/*If newpass and confpass are not compare - retur warning message*/
 					return new Response( 'warning' );
 				} else {
+					/*if everything is OK - change password and send notification email*/
 					$newpass = password_hash($newpass, PASSWORD_DEFAULT);
 					$em = $this->getDoctrine()->getEntityManager();
 					$update = $em->getRepository('InstasaverIndexEnBundle:User')->find($userId);
@@ -243,6 +248,7 @@ class UserEnController extends Controller {
 					return new Response( 'success' );
 			}
 		}  else {
+			/*If old password is wrong - return error message*/
 			return new Response( 'danger' );
 		}
 
