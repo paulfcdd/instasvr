@@ -207,6 +207,7 @@ class UserEnController extends Controller {
 	}
 
 	public function changePassAction () {
+
 		$user = $this->get('security.token_storage')->getToken()->getUser();
 		$request = $this->container->get('request');
 		$userId = $user->getId();

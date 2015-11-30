@@ -65,7 +65,9 @@ class IndexEnController extends Controller
 					'sign_in_modal_user_label' 		=> 'Введите логин',
 					'sign_in_modal_password_label'	=> 'Введите пароль',
 					'sign_in_modal_h4_text'			=> 'Вход на сайт',
-					'sign_in_modal_sub_text'		=> 'Для входа на сайт заполните поля ниже'
+					'sign_in_modal_sub_text'		=> 'Для входа на сайт заполните поля ниже',
+					'sign_in_modal_ok_button'		=> 'Вход',
+					'sign_in_modal_close_button'	=> 'Закрыть'
 				));
 			break;
 			case 'en':
@@ -97,7 +99,9 @@ class IndexEnController extends Controller
 					'sign_in_modal_user_label' 		=> 'Enter Your username',
 					'sign_in_modal_password_label'	=> 'Enter Your password',
 					'sign_in_modal_h4_text'			=> 'Login',
-					'sign_in_modal_sub_text'		=> 'For login please fill the fields below'		
+					'sign_in_modal_sub_text'		=> 'For login please fill the fields below',
+					'sign_in_modal_ok_button'		=> 'Вход',
+					'sign_in_modal_close_button'	=> 'Закрыть'
 				));
 			break;
 			case 'pl':
@@ -129,7 +133,9 @@ class IndexEnController extends Controller
 					'sign_in_modal_user_label' 		=> 'Podaj nazwę użytkownika',
 					'sign_in_modal_password_label'	=> 'Podaj hasło',
 					'sign_in_modal_h4_text'			=> 'Załoguj',
-					'sign_in_modal_sub_text'		=> 'Dla łogowania wypełni pola poniżej'		
+					'sign_in_modal_sub_text'		=> 'Dla łogowania wypełni pola poniżej',
+					'sign_in_modal_ok_button'		=> 'Вход',
+					'sign_in_modal_close_button'	=> 'Закрыть'
 				));
 			break;
 			case 'es':
@@ -161,7 +167,9 @@ class IndexEnController extends Controller
 					'sign_in_modal_user_label' 		=> 'Ingrese su login',
 					'sign_in_modal_password_label'	=> 'Ingrese su contraseña',
 					'sign_in_modal_h4_text'			=> 'Ingresar al sitio',
-					'sign_in_modal_sub_text'		=> 'Para acceder al sitio rellene los campos de abajo'
+					'sign_in_modal_sub_text'		=> 'Para acceder al sitio rellene los campos de abajo',
+					'sign_in_modal_ok_button'		=> 'Entrada',
+					'sign_in_modal_close_button'	=> 'Cierre'
 				));
 			break;
 		}
