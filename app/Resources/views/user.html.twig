@@ -44,17 +44,9 @@
         <div class="container infoblock">
             <div class="row maininfo">
                 <div class="col-xs-3">
-                    <img src="{{ asset('images/avatar.png') }}" onmouseover="onMouseOver()" onmouseleave="onMouseLeave()" id="avatar">
+                    <img src="{{ asset('images/avatar.png') }}" onmouseover="" onmouseleave="" id="avatar">
                 </div>
 				<script>
-					console.log ($("#avatar").attr());
-					function onMouseOver() {
-						$("#avatar").css('opacity','0.5');
-					}
-					
-					function onMouseLeave() {
-						$("#avatar").css('opacity','1');
-					}
 				</script>
                 <div class="col-xs-9">
                     <div class="row">

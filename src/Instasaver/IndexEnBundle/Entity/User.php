@@ -2,6 +2,7 @@
 namespace Instasaver\IndexEnBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -38,10 +39,25 @@ class User implements AdvancedUserInterface, \Serializable {
 	* @ORM\Column(type="string", length=255)
 	*/
 	protected $userAvatar;
-	/**
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     */
+    public $name;
+    /**
+     * @Assert\File(maxSize="6000000")
+     */
+    public $file;
+    /**
      * @ORM\Column(name="is_active", type="boolean")
      */
     private $isActive;
+
+   /* /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     */
+  //  public $name;
 
     public function __construct()
     {
@@ -164,7 +180,27 @@ class User implements AdvancedUserInterface, \Serializable {
     {
         return $this->isActive;
     }
-	
+
+    public function getAbsolutePath() {
+        return null === $this->userAvatar
+            ? null
+            : $this->getUploadRootDir().'/'.$this->userAvatar;
+    }
+
+    public function getWebPath() {
+        return null === $this->userAvatar
+            ? null
+            : $this->getUploadDir().'/'.$this->userAvatar;
+    }
+
+    protected function getUploadRootDir() {
+        return __DIR__.'/../../../../web/'.$this->getUploadRootDir();
+    }
+
+    protected function getUploadDir() {
+        return '/uploads/documents';
+    }
+
     public function serialize()
     {
         return serialize(array(
@@ -257,7 +293,7 @@ class User implements AdvancedUserInterface, \Serializable {
         return $this->userLang;
     }
 	
-	public function setUserAvatar() {
+	public function setUserAvatar($userAvatar) {
 		
 		return $this->userAvatar = $userAvatar;
 		
@@ -268,4 +304,28 @@ class User implements AdvancedUserInterface, \Serializable {
 		
 		return $this->userAvatar;
 	}
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return User
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 }

@@ -19,3 +19,7 @@ instasaver_user_en_get_cur_lang:
 instasaver_user_en_change_pass:
    path: /changePass
    defaults: { _controller: InstasaverUserEnBundle:UserEn:changePass }
+
+instasaver_user_en_upload_avatar:
+  path: /uploadavatar
+  defaults: { _controller: InstasaverUserEnBundle:UserEn:uploadAvatar }

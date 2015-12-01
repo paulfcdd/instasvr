@@ -54,7 +54,7 @@ class UserEnController extends Controller {
 
 		//$array = (array) $userTableInfo;
 		//var_dump($userTableInfo);
-		var_dump($user->getUserAvatar());
+		//var_dump($user->getUserAvatar());
 		if ($userAbout == null) {
 			$userAboutTpl = '';
 		} else {
@@ -253,6 +253,14 @@ class UserEnController extends Controller {
 			return new Response( 'danger' );
 		}
 
+	}
+
+	public function uploadAvatarAction() {
+
+		$upload = new User();
+
+
+		return new Response('test');
 	}
 
 }
