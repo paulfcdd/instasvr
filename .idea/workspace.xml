@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php" line="220" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php" line="221" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8841a043-db01-49b9-b748-d22e205fb7de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/user.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/user.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Instasaver/IndexEnBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/Instasaver/IndexEnBundle/Entity/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php" afterPath="$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Instasaver/UserEnBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Instasaver/UserEnBundle/Resources/config/routing.yml" />
     </list>
     <ignored path="instasaver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Instasaver/IndexEnBundle/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4764574">
-              <caret line="229" column="7" selection-start-line="229" selection-start-column="7" selection-end-line="229" selection-end-column="7" />
+            <state vertical-scroll-proportion="-6.8461537">
+              <caret line="295" column="33" selection-start-line="295" selection-start-column="20" selection-end-line="295" selection-end-column="33" />
               <folding>
                 <element signature="e#50#82#0#PHP" expanded="true" />
               </folding>
@@ -43,25 +42,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserEnController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserEnController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.113208">
-              <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.6312139">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
               <folding>
                 <element signature="e#53#94#0#PHP" expanded="true" />
-                <marker date="1448982321466" expanded="true" signature="1466:1545" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
+                <marker date="1449066129187" expanded="true" signature="1536:1615" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/user.css">
+      <file leaf-file-name="ContainerInterface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ContainerInterface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="262" column="30" selection-start-line="262" selection-start-column="30" selection-end-line="262" selection-end-column="30" />
+            <state vertical-scroll-proportion="-11.423077">
+              <caret line="67" column="21" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginEnController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Instasaver/LoginEnBundle/Controller/LoginEnController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/TestController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.461538">
+              <caret line="16" column="55" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="55" />
+              <folding>
+                <element signature="e#53#94#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,13 +110,12 @@
       <file leaf-file-name="user.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/user.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154">
-              <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+            <state vertical-scroll-proportion="-7.109091">
+              <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
               <folding>
-                <element signature="e#34#1726#0#Twig" expanded="false" />
                 <element signature="e#1727#2359#0#Twig" expanded="false" />
-                <element signature="e#18169#18732#0#Twig" expanded="false" />
-                <element signature="e#20233#20326#0#Twig" expanded="false" />
+                <element signature="e#18828#19391#0#Twig" expanded="false" />
+                <element signature="e#20892#20985#0#Twig" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -105,7 +125,7 @@
         <entry file="file://$PROJECT_DIR$/src/Instasaver/UserEnBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="21" />
+              <caret line="22" column="32" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -114,18 +134,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="125" selection-start-line="69" selection-start-column="99" selection-end-line="69" selection-end-column="125" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexEnController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Instasaver/IndexEnBundle/Controller/IndexEnController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="171" column="62" selection-start-line="171" selection-start-column="62" selection-end-line="171" selection-end-column="62" />
+            <state vertical-scroll-proportion="-2.2452831">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -152,11 +162,11 @@
         <option value="$PROJECT_DIR$/app/Resources/views/emails/test.twig.html" />
         <option value="$PROJECT_DIR$/app/Resources/views/emails/test.html.twig" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Instasaver/IndexEnBundle/Controller/IndexEnController.php" />
         <option value="$PROJECT_DIR$/src/Instasaver/UserEnBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/web/css/user.css" />
         <option value="$PROJECT_DIR$/src/Instasaver/IndexEnBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/user.html.twig" />
         <option value="$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php" />
       </list>
@@ -202,6 +212,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -334,6 +345,80 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instasaver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instasaver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Instasaver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserEnBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instasaver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instasaver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Instasaver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LoginEnBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instasaver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instasaver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Instasaver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LoginEnBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -358,7 +443,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -412,9 +496,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16041666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28387097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -432,6 +516,25 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28387097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -446,40 +549,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Instasaver/IndexEnBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#50#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="258" column="33" selection-start-line="258" selection-start-column="33" selection-end-line="258" selection-end-column="33" />
-          <folding>
-            <element signature="e#53#94#0#PHP" expanded="true" />
-            <marker date="1448982321466" expanded="true" signature="1466:1545" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/user.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="262" column="30" selection-start-line="262" selection-start-column="30" selection-end-line="262" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -501,10 +575,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
-            <element signature="e#34#1726#0#Twig" expanded="false" />
             <element signature="e#1727#2359#0#Twig" expanded="false" />
-            <element signature="e#18169#18732#0#Twig" expanded="false" />
-            <element signature="e#20233#20326#0#Twig" expanded="false" />
+            <element signature="e#18828#19391#0#Twig" expanded="false" />
+            <element signature="e#20892#20985#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -549,7 +622,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#53#94#0#PHP" expanded="true" />
-            <marker date="1448982321466" expanded="true" signature="1466:1545" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
+            <marker date="1449066129187" expanded="true" signature="1536:1615" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
           </folding>
         </state>
       </provider>
@@ -590,10 +663,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="192" column="54" selection-start-line="192" selection-start-column="54" selection-end-line="192" selection-end-column="54" />
           <folding>
-            <element signature="e#34#1726#0#Twig" expanded="false" />
             <element signature="e#1727#2359#0#Twig" expanded="false" />
-            <element signature="e#18169#18732#0#Twig" expanded="false" />
-            <element signature="e#20233#20326#0#Twig" expanded="false" />
+            <element signature="e#18828#19391#0#Twig" expanded="false" />
+            <element signature="e#20892#20985#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -638,7 +710,7 @@
           <caret line="205" column="41" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="41" />
           <folding>
             <element signature="e#53#94#0#PHP" expanded="true" />
-            <marker date="1448982321466" expanded="true" signature="1466:1545" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
+            <marker date="1449066129187" expanded="true" signature="1536:1615" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
           </folding>
         </state>
       </provider>
@@ -656,10 +728,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="180" column="54" selection-start-line="180" selection-start-column="54" selection-end-line="180" selection-end-column="54" />
           <folding>
-            <element signature="e#34#1726#0#Twig" expanded="false" />
             <element signature="e#1727#2359#0#Twig" expanded="false" />
-            <element signature="e#18169#18732#0#Twig" expanded="false" />
-            <element signature="e#20233#20326#0#Twig" expanded="false" />
+            <element signature="e#18828#19391#0#Twig" expanded="false" />
+            <element signature="e#20892#20985#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -704,7 +775,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#53#94#0#PHP" expanded="true" />
-            <marker date="1448982321466" expanded="true" signature="1466:1545" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
+            <marker date="1449066129187" expanded="true" signature="1536:1615" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
           </folding>
         </state>
       </provider>
@@ -714,10 +785,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="180" column="54" selection-start-line="180" selection-start-column="54" selection-end-line="180" selection-end-column="54" />
           <folding>
-            <element signature="e#34#1726#0#Twig" expanded="false" />
             <element signature="e#1727#2359#0#Twig" expanded="false" />
-            <element signature="e#18169#18732#0#Twig" expanded="false" />
-            <element signature="e#20233#20326#0#Twig" expanded="false" />
+            <element signature="e#18828#19391#0#Twig" expanded="false" />
+            <element signature="e#20892#20985#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -762,7 +832,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#53#94#0#PHP" expanded="true" />
-            <marker date="1448982321466" expanded="true" signature="1466:1545" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
+            <marker date="1449066129187" expanded="true" signature="1536:1615" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
           </folding>
         </state>
       </provider>
@@ -772,10 +842,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="180" column="54" selection-start-line="180" selection-start-column="54" selection-end-line="180" selection-end-column="54" />
           <folding>
-            <element signature="e#34#1726#0#Twig" expanded="false" />
             <element signature="e#1727#2359#0#Twig" expanded="false" />
-            <element signature="e#18169#18732#0#Twig" expanded="false" />
-            <element signature="e#20233#20326#0#Twig" expanded="false" />
+            <element signature="e#18828#19391#0#Twig" expanded="false" />
+            <element signature="e#20892#20985#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -833,14 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="125" selection-start-line="69" selection-start-column="99" selection-end-line="69" selection-end-column="125" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/emails/test.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -848,10 +909,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+    <entry file="file://$PROJECT_DIR$/web/css/user.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+          <caret line="262" column="30" selection-start-line="262" selection-start-column="30" selection-end-line="262" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2452831">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -864,23 +933,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/user.css">
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="262" column="30" selection-start-line="262" selection-start-column="30" selection-end-line="262" selection-end-column="30" />
+          <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Instasaver/LoginEnBundle/Controller/LoginEnController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/TestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="16" column="55" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="55" />
+          <folding>
+            <element signature="e#53#94#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ContainerInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.423077">
+          <caret line="67" column="21" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Instasaver/IndexEnBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8461537">
+          <caret line="295" column="33" selection-start-line="295" selection-start-column="20" selection-end-line="295" selection-end-column="33" />
+          <folding>
+            <element signature="e#50#82#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/user.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+        <state vertical-scroll-proportion="-7.109091">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
           <folding>
-            <element signature="e#34#1726#0#Twig" expanded="false" />
             <element signature="e#1727#2359#0#Twig" expanded="false" />
-            <element signature="e#18169#18732#0#Twig" expanded="false" />
-            <element signature="e#20233#20326#0#Twig" expanded="false" />
+            <element signature="e#18828#19391#0#Twig" expanded="false" />
+            <element signature="e#20892#20985#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -888,28 +992,18 @@
     <entry file="file://$PROJECT_DIR$/src/Instasaver/UserEnBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="21" />
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.113208">
-          <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.6312139">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
           <folding>
             <element signature="e#53#94#0#PHP" expanded="true" />
-            <marker date="1448982321466" expanded="true" signature="1466:1545" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instasaver/IndexEnBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4764574">
-          <caret line="229" column="7" selection-start-line="229" selection-start-column="7" selection-end-line="229" selection-end-column="7" />
-          <folding>
-            <element signature="e#50#82#0#PHP" expanded="true" />
+            <marker date="1449066129187" expanded="true" signature="1536:1615" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
           </folding>
         </state>
       </provider>

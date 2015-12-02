@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 //use Symfony\Component\BrowserKit\Cookie;
 use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class UserEnController extends Controller {
 
@@ -22,7 +23,7 @@ class UserEnController extends Controller {
 			$mainInfBtn = 0;
 		}
 		$userLang = $user->getUserLang();
-		//var_dump($user);
+		var_dump($user->getUserAvatar());
 		$userCookie = array(
 			'name'		=> 'userLanguage',
 			'value'		=> $userLang,
@@ -257,10 +258,22 @@ class UserEnController extends Controller {
 
 	public function uploadAvatarAction() {
 
-		$upload = new User();
-
-
-		return new Response('test');
+		$user = $this->get('security.token_storage')->getToken()->getUser();
+		$userId = $user->getId();
+		$path = '../web/uploads/';
+		$pathForDb = '/uploads/';
+		$uploadfile = $path . basename($_FILES['userfile']['name']);
+		$pathForDb = '/uploads/'. basename($_FILES['userfile']['name']);
+		if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+			$em = $this->getDoctrine()->getEntityManager();
+			$update = $em->getRepository('InstasaverIndexEnBundle:User')->find($userId);
+			$update->setUserAvatar($pathForDb);
+			$em->persist($update);
+			$em->flush();
+			return new Response('OK');
+		} else {
+			return new Response($_FILES['userfile']['error']);
+		}
 	}
 
 }
