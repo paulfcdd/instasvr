@@ -40,11 +40,6 @@ class User implements AdvancedUserInterface, \Serializable {
 	*/
 	protected $userAvatar;
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
-     */
-    public $name;
-    /**
      * @Assert\File(maxSize="6000000")
      */
     public $file;
@@ -304,28 +299,4 @@ class User implements AdvancedUserInterface, \Serializable {
 		
 		return $this->userAvatar;
 	}
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return User
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
 }

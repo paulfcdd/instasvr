@@ -117,7 +117,7 @@ html, body {
 	.userinfo {
 		width: 100%;
 		padding: 1% 0 1% 0;
-		background-image: url("../images/user_bg.png");
+		background-image: url("../images/user_bg.jpg");
 		background-size: cover;
 	}
 	
@@ -130,8 +130,8 @@ html, body {
 	}
 
 	#avatar {
-		width: 150px;
-		height: 150px;
+		width: 170px;
+		height: 170px;
 	}
 
 	.username {
@@ -254,9 +254,6 @@ html, body {
 		height: 1%;
 		vertical-align: middle;
 	}	
-}
-
-@media screen and (max-width: 992px) {
 	
 	.topheader {
 		width: 99% !important; 
@@ -309,7 +306,7 @@ html, body {
 	
 	.userinfo {
 		width: 100%;
-		background-image: url("../images/user_bg.png");
+		background-image: url("../images/user_bg.jpg");
 		background-size: cover;
 		padding: 1% 0 1% 0;
 	}
@@ -322,4 +319,16 @@ html, body {
 		width: 75px;
 		height: 75px;
 	}
+	
+	.editUserInfoModal {
+		width: 100% !important;
+		-webkit-border-radius: 0px !important;
+		-moz-border-radius: 0px !important;
+		border-radius: 0px !important; 
+	}
+}
+
+@media screen and (max-width: 992px) {
+	
+	
 }

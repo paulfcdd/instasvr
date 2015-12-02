@@ -23,7 +23,7 @@ class UserEnController extends Controller {
 			$mainInfBtn = 0;
 		}
 		$userLang = $user->getUserLang();
-		var_dump($user->getUserAvatar());
+		//var_dump($user->getUserAvatar());
 		$userCookie = array(
 			'name'		=> 'userLanguage',
 			'value'		=> $userLang,
