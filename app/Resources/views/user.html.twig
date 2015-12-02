@@ -43,9 +43,10 @@
     <div class="userinfo">
         <div class="container infoblock">
             <div class="row maininfo">
+
                 <div class="col-xs-3">
                     <!--<img src="{{ asset('images/avatar.png') }}" onmouseover="" onmouseleave="" id="avatar">-->
-                    <img src="/instasaver/web/uploads/2.jpg" onmouseover="" onmouseleave="" id="avatar">
+                    <img src="{{ asset( avatar ) }}" onmouseover="" onmouseleave="" id="avatar">
                 </div>
                 <form enctype="multipart/form-data" action="{{ path('instasaver_user_en_upload_avatar') }}" method="POST">
                     <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->

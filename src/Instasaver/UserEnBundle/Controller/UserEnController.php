@@ -87,7 +87,8 @@ class UserEnController extends Controller {
 					'saved_photos' 			=> 'Saved photos',
 					'wrong_pass'			=> 'Old password is incorrect!',
 					'notmatch_pass'			=> 'Сheck the correctness of the password',
-					'pass_change_success'	=> 'Password was changed successfully!'
+					'pass_change_success'	=> 'Password was changed successfully!',
+					'avatar'				=> $user->getUserAvatar()
 				));
 				break;
 			case 'pl':
@@ -114,7 +115,8 @@ class UserEnController extends Controller {
 					'saved_photos' 			=> 'Zapisane zdjęcia',
 					'wrong_pass'			=> 'Podane stare hasło nie jest poprawne!',
 					'notmatch_pass'			=> 'Sprawdz poprawność podanego hasła',
-					'pass_change_success'	=> 'Hasło zostało zmienione pomyślnie!'
+					'pass_change_success'	=> 'Hasło zostało zmienione pomyślnie!',
+					'avatar'				=> $user->getUserAvatar()
 				));
 				break;
 			case 'ru':
@@ -141,7 +143,8 @@ class UserEnController extends Controller {
 					'saved_photos' 			=> 'Сохраненные фотографии',
 					'wrong_pass'			=> 'Неверно указан старый пароль!',
 					'notmatch_pass'			=> 'Проверьте правильность ввода пароля',
-					'pass_change_success'	=> 'Пароль был успешно сменен!'
+					'pass_change_success'	=> 'Пароль был успешно сменен!',
+					'avatar'				=> $user->getUserAvatar()
 				));
 				break;
 			case 'es':
@@ -168,7 +171,8 @@ class UserEnController extends Controller {
 					'saved_photos' 			=> 'Guardadas fotos',
 					'wrong_pass'			=> 'Old password is incorrect!',
 					'notmatch_pass'			=> 'New password not match',
-					'pass_change_success'	=> 'SUCCESS'
+					'pass_change_success'	=> 'SUCCESS',
+					'avatar'				=> $user->getUserAvatar()
 				));
 				break;
 		}
