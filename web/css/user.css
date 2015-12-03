@@ -130,8 +130,8 @@ html, body {
 	}
 
 	#avatar {
-		width: 170px;
-		height: 170px;
+		width: 240px;
+		height: 240px;
 	}
 
 	.username {
@@ -245,7 +245,36 @@ html, body {
 		#border: 1px solid black;
 		padding: 1% 0 1% 0 !important;
 	}
-	
+
+
+.cropit-image-preview {
+	background-color: #f8f8f8;
+	background-size: cover;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-top: 7px;
+	width: 240px;
+	height: 240px;
+	cursor: move;
+}
+
+.cropit-image-background {
+	opacity: .2;
+	cursor: auto;
+}
+
+.image-size-label {
+	margin-top: 10px;
+}
+
+input {
+	display: block;
+}
+
+.export {
+	margin-top: 10px;
+}
+
 /*MEDIA SETTINGS*/
 @media screen and (max-width: 381px) {
 .header:before {

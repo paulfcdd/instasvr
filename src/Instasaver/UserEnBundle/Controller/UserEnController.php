@@ -261,8 +261,18 @@ class UserEnController extends Controller {
 	}
 
 	public function uploadAvatarAction() {
+		$request = $this->container->get('request');
+		$imageJSON = $request->get('imageJSON');
+		$imageBase = json_decode($imageJSON);
+		$output_file = '/test';
+		$ifp = fopen($output_file, "wb");
+		$data = explode(',', $imageBase);
+		fwrite($ifp, base64_decode($data[1]));
+		fclose($ifp);
+		return new Response($output_file);
 
-		$user = $this->get('security.token_storage')->getToken()->getUser();
+
+		/*$user = $this->get('security.token_storage')->getToken()->getUser();
 		$userId = $user->getId();
 		$path = '../web/uploads/';
 		$pathForDb = '/uploads/';
@@ -277,7 +287,7 @@ class UserEnController extends Controller {
 			return new Response('OK');
 		} else {
 			return new Response($_FILES['userfile']['error']);
-		}
+		}*/
 	}
 
 }
