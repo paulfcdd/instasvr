@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8841a043-db01-49b9-b748-d22e205fb7de" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/user.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/user.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php" afterPath="$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php" />
     </list>
     <ignored path="instasaver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +42,11 @@
       <file leaf-file-name="UserEnController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.226415">
-              <caret line="272" column="50" selection-start-line="272" selection-start-column="50" selection-end-line="272" selection-end-column="50" />
+            <state vertical-scroll-proportion="-13.113208">
+              <caret line="281" column="41" selection-start-line="281" selection-start-column="41" selection-end-line="281" selection-end-column="41" />
               <folding>
                 <element signature="e#53#94#0#PHP" expanded="true" />
-                <marker date="1449227163357" expanded="true" signature="1538:1617" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
+                <marker date="1449227669988" expanded="true" signature="1538:1617" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
               </folding>
             </state>
           </provider>
@@ -99,8 +97,8 @@
       <file leaf-file-name="user.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/user.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42825112">
-              <caret line="110" column="65" selection-start-line="110" selection-start-column="65" selection-end-line="110" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.5997758">
+              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -542,7 +540,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3012714" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -654,7 +652,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#53#94#0#PHP" expanded="true" />
-            <marker date="1449227163357" expanded="true" signature="1538:1617" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
+            <marker date="1449227669988" expanded="true" signature="1538:1617" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
           </folding>
         </state>
       </provider>
@@ -735,7 +733,7 @@
           <caret line="205" column="41" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="41" />
           <folding>
             <element signature="e#53#94#0#PHP" expanded="true" />
-            <marker date="1449227163357" expanded="true" signature="1538:1617" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
+            <marker date="1449227669988" expanded="true" signature="1538:1617" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
           </folding>
         </state>
       </provider>
@@ -794,7 +792,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#53#94#0#PHP" expanded="true" />
-            <marker date="1449227163357" expanded="true" signature="1538:1617" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
+            <marker date="1449227669988" expanded="true" signature="1538:1617" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
           </folding>
         </state>
       </provider>
@@ -845,7 +843,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#53#94#0#PHP" expanded="true" />
-            <marker date="1449227163357" expanded="true" signature="1538:1617" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
+            <marker date="1449227669988" expanded="true" signature="1538:1617" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
           </folding>
         </state>
       </provider>
@@ -1001,19 +999,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.226415">
-          <caret line="272" column="50" selection-start-line="272" selection-start-column="50" selection-end-line="272" selection-end-column="50" />
+        <state vertical-scroll-proportion="-13.113208">
+          <caret line="281" column="41" selection-start-line="281" selection-start-column="41" selection-end-line="281" selection-end-column="41" />
           <folding>
             <element signature="e#53#94#0#PHP" expanded="true" />
-            <marker date="1449227163357" expanded="true" signature="1538:1617" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
+            <marker date="1449227669988" expanded="true" signature="1538:1617" placeholder="SELECT usern..InstasaverIndexEnBundle..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/user.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42825112">
-          <caret line="110" column="65" selection-start-line="110" selection-start-column="65" selection-end-line="110" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.5997758">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
         </state>
       </provider>
