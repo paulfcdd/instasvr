@@ -108,11 +108,16 @@
                                             $.ajax({
                                                 type: "post",
                                                 url: "{{path('instasaver_user_en_upload_avatar')}}",
+                                                dataType: 'text',
                                                 data: {
                                                     imageJSON: imgData
                                                 },
                                                 success: function(data){
-                                                    console.log(data)
+                                                    if (data == 'OK') {
+                                                        location.reload();
+                                                    } else {
+                                                        alert('Avatar wasn\'t changed!')
+                                                    }
                                                 }
                                             });
                                         });

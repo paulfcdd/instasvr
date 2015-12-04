@@ -261,24 +261,17 @@ class UserEnController extends Controller {
 	}
 
 	public function uploadAvatarAction() {
+		$user = $this->get('security.token_storage')->getToken()->getUser();
 		$request = $this->container->get('request');
-		$imageJSON = $request->get('imageJSON');
-		$imageBase = json_decode($imageJSON);
-		$output_file = '/test';
-		$ifp = fopen($output_file, "wb");
-		$data = explode(',', $imageBase);
-		fwrite($ifp, base64_decode($data[1]));
-		fclose($ifp);
-		return new Response($output_file);
-
-
-		/*$user = $this->get('security.token_storage')->getToken()->getUser();
 		$userId = $user->getId();
-		$path = '../web/uploads/';
-		$pathForDb = '/uploads/';
-		$uploadfile = $path . basename($_FILES['userfile']['name']);
-		$pathForDb = '/uploads/'. basename($_FILES['userfile']['name']);
-		if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+		$imageJSON = $request->get('imageJSON');
+		$imageBASE64 = json_decode($imageJSON);
+		list($type, $imageBASE64) = explode(';', $imageBASE64);
+		list(, $imageBASE64)      = explode(',', $imageBASE64);
+		$data = base64_decode($imageBASE64);
+		$path = '../web/uploads/id'.$userId.'.jpg';
+		$pathForDb = '/uploads/id'.$userId.'.jpg';
+		if (file_put_contents($path, $data) == true) {
 			$em = $this->getDoctrine()->getEntityManager();
 			$update = $em->getRepository('InstasaverIndexEnBundle:User')->find($userId);
 			$update->setUserAvatar($pathForDb);
@@ -286,8 +279,8 @@ class UserEnController extends Controller {
 			$em->flush();
 			return new Response('OK');
 		} else {
-			return new Response($_FILES['userfile']['error']);
-		}*/
+			return new Response('Error');
+		}
 	}
 
 }
