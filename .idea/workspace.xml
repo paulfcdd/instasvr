@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/Instasaver/UserEnBundle/Controller/UserEnController.php" line="225" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8841a043-db01-49b9-b748-d22e205fb7de" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="8841a043-db01-49b9-b748-d22e205fb7de" name="Default" comment="" />
     <ignored path="instasaver.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
