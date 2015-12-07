@@ -58,14 +58,6 @@
                     <!---->
                     
                 </div>
-                <!--
-				<form enctype="multipart/form-data" action="{{ path('instasaver_user_en_upload_avatar') }}" method="POST">
-                    <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
-                    <!--<input type="hidden" name="MAX_FILE_SIZE" value="20000000" />
-                    <!-- Название элемента input определяет имя в массиве $_FILES -->
-                    <!--Отправить этот файл: <input name="userfile" type="file" />
-                    <input type="submit" value="Send File" />
-                </form>-->
 				<script>
 					function pointerOn() {
 						$("#avatar").css('cursor', 'pointer');
@@ -75,10 +67,12 @@
 						$("#avatar").css('cursor', '');
 					}
 				</script>
+                <!--LOAD AVATAR -->
 				<div id="editPhoto" class="modal fade " role="dialog">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
 								<h3 class="modal-title">UPLOAD IMAGE</h3>
 							</div>
 							<div class="modal-body">
@@ -130,7 +124,6 @@
 					</div>
 				</div>
 				<script>
-
 				</script>
                 <div class="col-xs-9">
                     <div class="row">
