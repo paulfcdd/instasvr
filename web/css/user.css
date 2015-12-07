@@ -149,6 +149,7 @@ html, body {
 	
 	.maininfoRow {
 		margin-bottom: 0.3%;
+		width: 100% !important;
 	}
 	
 	
@@ -275,8 +276,25 @@ input {
 	margin-top: 10px;
 }
 
-/*MEDIA SETTINGS*/
-@media screen and (max-width: 381px) {
+/*==================== MEDIA SCREEN BLOCK ====================*/
+
+/*MEDIA SCREEN FOR HI-RES LAPTOPS AND TV'S*/
+@media screen and(min-width: 993px) {
+
+}
+
+/*MEDIA SCREEN FOR NETBOOKS, LAPTOPS, SCREENS*/
+@media screen and(min-width: 769px) and (max-width: 992px) {
+
+}
+
+/*MEDIA SETTINGS FOR TABLETS*/
+@media screen and(min-width: 481px) and (max-width: 768px) {
+
+}
+
+/*MEDIA SETTINGS FOR SMARTPHONES*/
+@media screen and (max-width: 480px) {
 .header:before {
 		content: '';
 		display: inline-block;
@@ -285,12 +303,15 @@ input {
 	}	
 	
 	.topheader {
-		width: 99% !important; 
+		width: 100% !important;
 		display: inline-block;
 		vertical-align: middle;
 		#border: 1px solid black !important;
 	}
-	
+
+	.editbutton {
+		margin-left: 1.4em;
+	}
 	.editbutton p {
 		font-size: 0.8em;
 		color: whitesmoke;
@@ -298,6 +319,9 @@ input {
 	
 	.maininfoRow {
 		margin-bottom: 2%;
+		padding: 0 !important;
+		margin-left: 2em;
+		width: 88% !important;
 	}
 	
 	.buttonBox {
@@ -345,8 +369,8 @@ input {
 		margin: 7% 0 7% 0;
 	}
 	#avatar {
-		width: 75px;
-		height: 75px;
+		width: 7em;
+		height: 7em;
 	}
 	
 	.editUserInfoModal {
