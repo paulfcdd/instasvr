@@ -192,6 +192,7 @@ class IndexEnController extends Controller
 		$reg->setPassword($password);
 		$reg->setUserLang($userLang);
 		$reg->setUserAbout('');
+		$reg->setUserAvatar('');
 		
 		$em = $this->getDoctrine()->getEntityManager();
 		$em -> persist($reg);
