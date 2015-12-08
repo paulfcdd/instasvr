@@ -150,7 +150,7 @@ class UserEnController extends Controller {
 			case 'es':
 				return $this->render('::user.html.twig', array (
 					'username'				=> $userTableInfo->getUsername(),
-					'logout'				=> 'Cerrar sesión',
+					'logout'				=> 'Salida',
 					'main_inf_btn'			=> $mainInfBtn,
 					'email'					=> $userTableInfo->getEmail(),
 					'userAboutTpl'			=> $userAboutTpl,
@@ -169,9 +169,9 @@ class UserEnController extends Controller {
 					'confirm_pass_lbl' 		=> 'Confirmar contraseña',
 					'follow' 				=> 'SEGUIR',
 					'saved_photos' 			=> 'Instasaves',
-					'wrong_pass'			=> 'Old password is incorrect!',
-					'notmatch_pass'			=> 'New password not match',
-					'pass_change_success'	=> 'SUCCESS',
+					'wrong_pass'			=> 'Antiguo contraseña es incorrecta!',
+					'notmatch_pass'			=> 'Comprobar la exactitud de la contraseña',
+					'pass_change_success'	=> 'La contraseña se cambió correctamente!',
 					'avatar'				=> $user->getUserAvatar()
 				));
 				break;

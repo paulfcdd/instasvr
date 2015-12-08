@@ -289,13 +289,53 @@ input {
 }
 
 /*MEDIA SETTINGS FOR TABLETS*/
-@media screen and(min-width: 481px) and (max-width: 768px) {
+@media screen and (max-width: 768px) and (min-width: 482px) {
+	.header:before {
+		content: '';
+		display: inline-block;
+		height: 2%;
+		vertical-align: middle;
+	}
+
+	.topheader {
+		width: 90% !important;
+		display: inline-block;
+		vertical-align: middle;
+		#border: 1px solid black !important;
+		margin-top: 4%;
+		#height: 100%;
+	}
+
+	.maininfoRow {
+		width: 60% !important;
+		padding: 0 0 5% 0;
+		#border: 1px solid black !important;
+		#margin-left: 2em;
+		float: right !important;
+	}
+
+	.infoblock {
+		width: 100% !important;
+		#border: 1px solid black !important;
+	}
+
+	#avatar {
+		width: 15em;
+		height: 15em;
+	}
+
+	.editUserInfoModal {
+		width: 100% !important;
+		-webkit-border-radius: 0px !important;
+		-moz-border-radius: 0px !important;
+		border-radius: 0px !important;
+	}
 
 }
 
 /*MEDIA SETTINGS FOR SMARTPHONES*/
 @media screen and (max-width: 480px) {
-.header:before {
+	.header:before {
 		content: '';
 		display: inline-block;
 		height: 1%;
@@ -310,7 +350,7 @@ input {
 	}
 
 	.editbutton {
-		margin-left: 1.4em;
+		margin-left: .8em;
 	}
 	.editbutton p {
 		font-size: 0.8em;
@@ -379,9 +419,4 @@ input {
 		-moz-border-radius: 0px !important;
 		border-radius: 0px !important; 
 	}
-}
-
-@media screen and (max-width: 992px) {
-	
-	
 }
