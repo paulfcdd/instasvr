@@ -50,6 +50,23 @@ html, body {
 		#background: linear-gradient(to top, #133f4f , #0073a3 );
 		/*padding: 0;*/
 	}
+
+	.topheader {
+		width: 60% !important;
+		position: relative;
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+		#border: 1px solid black !important;
+	}
+
+	.topheaderInner {
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		margin-top: -0.625em;
+		#border: 1px solid red;
+	}
 	
 	.logo a {
 		font-family: instasaver;
@@ -107,13 +124,6 @@ html, body {
 		height: 80px;
 	}
 
-	.topheader {
-		width: 60% !important; 
-		display: inline-block;
-		vertical-align: middle;
-		#border: 1px solid black !important;
-	}
-
 	.userinfo {
 		width: 100%;
 		padding: 1% 0 1% 0;
@@ -126,7 +136,13 @@ html, body {
 	.infoblock {
 		width: 60% !important; 
 		margin: 3% 0 4% 0;
-		#border: 1px solid black !important;
+		border: 1px solid black !important;
+	}
+
+	.photoblock {
+		width: 60% !important;
+		#margin: 3% 0 4% 0;,
+		border: 1px solid black !important;
 	}
 
 	#avatar {
@@ -298,12 +314,20 @@ input {
 	}
 
 	.topheader {
-		width: 90% !important;
+		width: 100% !important;
+		position: relative;
+		height: 100%;
 		display: inline-block;
 		vertical-align: middle;
-		#border: 1px solid black !important;
-		margin-top: 4%;
-		#height: 100%;
+		border: 1px solid black !important;
+	}
+
+	.topheaderInner {
+		position: absolute;
+		width: 100% !important;
+		top: 50%;
+		margin-top: -0.625em;
+		#border: 1px solid red;
 	}
 
 	.maininfoRow {
@@ -340,13 +364,22 @@ input {
 		display: inline-block;
 		height: 1%;
 		vertical-align: middle;
-	}	
-	
+	}
+
 	.topheader {
 		width: 100% !important;
+		position: relative;
+		height: 100%;
 		display: inline-block;
 		vertical-align: middle;
 		#border: 1px solid black !important;
+	}
+
+	.topheaderInner {
+		position: absolute;
+		top: 50%;
+		margin-top: -0.625em;
+		#border: 1px solid red;
 	}
 
 	.editbutton {
