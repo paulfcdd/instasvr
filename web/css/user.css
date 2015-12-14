@@ -393,7 +393,7 @@ input {
 
 	.topheaderInner {
 		position: absolute;
-		top: 50%;
+		top: 45%;
 		margin-top: -0.625em;
 		#border: 1px solid red;
 	}
@@ -496,8 +496,7 @@ border-radius: 0 0 0 0 !important;
 	.logoutico {
 		visibility: visible;
 		color: white;
-		font-size: 1.7em;
-		margin-top: -10% !important;
+		font-size: 1.8em;
 	}
 	
 	.logout {
@@ -512,9 +511,12 @@ border-radius: 0 0 0 0 !important;
 		visibility: visible;
 		width: 24px;
 		height: 24px;
+		position: absolute;
+		top: 5%;
 	}
 	
 	.downloadHeader {
-
+		height: 26px !important;
+		width: 100% !important;
 	}
 }
