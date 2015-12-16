@@ -27,21 +27,30 @@
 {% block header%}
     <div class="header">
         <div class="container topheader">
-            <div class="row topheaderInner">
-                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <p class="text-left logo"><a href="">Instasaver</a></p>
+            <div class="row topheaderInner col-centered">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 test">
+                    <p class="pull-left text-left logo"><a href="">Instasaver</a></p>
 					<img src="{{ asset('images/whitelogo.png') }}" class="img-responsive logoico">
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-left">
-                    <div class="input-group">
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 test">
+					<div class="input-group downloadHeaderDiv">
+						<input type="text" class="form-control downloadHeader" placeholder="Search for...">
+						 <span class="input-group-btn ">
+							<button class="btn btn-default downloadHeaderBtn" type="button">
+								<span class="glyphicon glyphicon-download"></span>
+							</button>
+						</span>
+					</div><!-- /input-group -->
+					
+                    <!--<div class="input-group">
                         <input type="url" class="form-control downloadHeader"/>
                             <span class="input-group-addon">
                                 <i class="fa fa-search"></i>
                             </span>
                     </div>
-					<!-- <input type="url" class="form-control downloadHeader"> -->
+					<input type="url" class="form-control downloadHeader"> -->
                 </div>
-                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 test">
 					<span class="pull-right glyphicon glyphicon-log-out logoutico"></span>
                     <p class="pull-right logout"><a href="/instasaver/web/app_dev.php/logout">{{ logout }}</a></p>
                 </div>

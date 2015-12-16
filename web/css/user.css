@@ -59,14 +59,29 @@ html, body {
 		vertical-align: middle;
 		#border: 1px solid black !important;
 	}
-
+	
+	.col-centered{
+		padding-top: 1.5%;
+	}
+	
+	.downloadHeaderDiv {
+		#border: 1px solid black;
+		margin-top: -2%;
+	}
+	
 	.topheaderInner {
 		position: absolute;
 		width: 100%;
-		top: 50%;
+		top: 35%;
 		margin-top: -0.625em;
 		#border: 1px solid red;
+		height: 50%;
 	}
+	
+	.test {
+		#border: 1px solid black;
+	}
+	
 	
 	.logo a {
 		font-family: instasaver;
@@ -155,10 +170,15 @@ html, body {
 		color: white;
 		
 	}
+	.maininfo {
+		border: 2px solid yellow;
+		width: 100%;
+	}
 	
 	.maininfoRow {
 		margin-bottom: 0.3%;
 		width: 100% !important;
+		#border: 2px solid yellow;
 	}
 	
 	
@@ -297,11 +317,6 @@ input {
 }
 /*==================== MEDIA SCREEN BLOCK ====================*/
 
-/*MEDIA SCREEN FOR HI-RES LAPTOPS AND TV'S*/
-@media screen and(min-width: 993px) {
-
-}
-
 /*MEDIA SCREEN FOR NETBOOKS, LAPTOPS, SCREENS*/
 @media screen and(min-width: 769px) and (max-width: 992px) {
 	.saveAndShareBtns {
@@ -406,6 +421,19 @@ input {
 		color: whitesmoke;
 	}
 	
+	.userinfo {
+		border: 2px solid red;
+	}
+	
+	.subinfo {
+		border: 2px solid green;
+	}
+	
+	.maininfo {
+		border: 1px solid red;
+		width: 100% !important;
+		margin-left: 5%;
+	}
 	.maininfoRow {
 		margin-bottom: 2%;
 		padding: 0 !important;
@@ -518,5 +546,9 @@ border-radius: 0 0 0 0 !important;
 	.downloadHeader {
 		height: 26px !important;
 		width: 100% !important;
+	}
+	
+	.downloadHeaderBtn {
+		height: 26px !important;
 	}
 }
