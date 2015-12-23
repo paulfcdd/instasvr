@@ -1,0 +1,407 @@
+{% extends '::index.html.twig' %}
+{% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ username }}</title>
+        <link rel="shortcut icon" href="{{ asset('images/icon.ico') }}">
+        <link rel="stylesheet" href="{{ asset('css/user.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/croppie.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('flags/css/flag-icon.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('flags/css/flag-icon.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('select/dist/css/bootstrap-select.css') }}" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+        <script src="{{ asset('select/dist/js/bootstrap-select.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/croppie.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.js')}}"></script>
+       <!--<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1-rc.1/css/select2.min.css" rel="stylesheet" />
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1-rc.1/js/select2.min.js"></script>-->
+	</head>
+{% endblock %}
+{% block header%}
+    <div class="header">
+        <div class="container topheader">
+            <div class="row topheaderInner col-centered">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 test">
+                    <p class="pull-left text-left logo"><a href="">Instasaver</a></p>
+					<img src="{{ asset('images/whitelogo.png') }}" class="img-responsive logoico">
+                </div>
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 test">
+					<div class="input-group downloadHeaderDiv">
+						<input type="text" class="form-control downloadHeader" placeholder="Search for...">
+						 <span class="input-group-btn ">
+							<button class="btn btn-default downloadHeaderBtn" type="button">
+								<span class="glyphicon glyphicon-download"></span>
+							</button>
+						</span>
+					</div><!-- /input-group -->
+					
+                    <!--<div class="input-group">
+                        <input type="url" class="form-control downloadHeader"/>
+                            <span class="input-group-addon">
+                                <i class="fa fa-search"></i>
+                            </span>
+                    </div>
+					<input type="url" class="form-control downloadHeader"> -->
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 test">
+					<span class="pull-right glyphicon glyphicon-log-out logoutico"></span>
+                    <p class="pull-right logout"><a href="/instasaver/web/app_dev.php/logout">{{ logout }}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="userinfo">
+        <div class="container infoblock">
+            <div class="row maininfo">
+
+                <div class="col-xs-3">
+					{% if avatar == '' %}
+                        <img  class="img-circle" src="{{ asset('images/avatar.png') }}" onmouseover="pointerOn()" onmouseleave="pointerOff()"
+                              id="avatar" data-toggle="modal" data-target="#editPhoto">
+					{% endif %}
+					
+					{% if not avatar == '' %}
+						<img  class="img-circle" src="{{ asset( avatar ) }}" onmouseover="pointerOn()" onmouseleave="pointerOff()"
+						id="avatar" data-toggle="modal" data-target="#editPhoto">
+					{% endif %}
+                    <!---->
+                    
+                </div>
+				<script>
+					function pointerOn() {
+						$("#avatar").css('cursor', 'pointer');
+					}
+					
+					function pointerOff() {
+						$("#avatar").css('cursor', '');
+					}
+				</script>
+                <!--LOAD AVATAR -->
+				<div id="editPhoto" class="modal fade " role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h3 class="modal-title">UPLOAD IMAGE</h3>
+							</div>
+							<div class="modal-body">
+                                <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+                                <script src="{{ asset('js/jquery.cropit.js') }}"></script>
+                                <div class="image-editor">
+                                    <input type="file" class="cropit-image-input">
+                                    <div class="cropit-image-preview"></div>
+                                    <div class="image-size-label">
+                                        Resize image
+                                    </div>
+                                    <input type="range" class="cropit-image-zoom-input">
+                                    <button class="export">Export</button>
+                                </div>
+
+                                <script>
+                                    $(function() {
+                                        $('.image-editor').cropit({
+                                            imageState: {
+                                                src: '',
+                                            },
+                                        });
+
+                                        $('.export').click(function() {
+                                            var imageData = $('.image-editor').cropit('export');
+                                            var imgData = JSON.stringify(imageData);
+                                            $.ajax({
+                                                type: "post",
+                                                url: "{{path('instasaver_user_en_upload_avatar')}}",
+                                                dataType: 'text',
+                                                data: {
+                                                    imageJSON: imgData
+                                                },
+                                                success: function(data){
+                                                    if (data == 'OK') {
+                                                        location.reload();
+                                                    } else {
+                                                        alert('Avatar wasn\'t changed!')
+                                                    }
+                                                }
+                                            });
+                                        });
+                                    });
+                                </script>
+							</div>
+							<div class="modal-footer">
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="col-xs-9">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 maininfoRow">
+                            <p class="username">{{ username }}</p>
+                        </div>
+                        <div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 maininfoRow">
+                            <p class="userInformation">{{ userAboutTpl }}</p>
+							<br/>
+							
+                        </div>
+                        <div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 maininfoRow" style="width: 100%;">
+                            {% if main_inf_btn == 1 %}
+                                <button type="button" class="btn btn-primary pull-left editbutton btn-lg" data-toggle="modal" data-target="#editModal">
+                                    <p class="nopadding"><span class="glyphicon glyphicon-cog editIco"></span>&nbsp;{{ edit_profile }}</p>
+                                </button>
+
+                                <div id="editModal" class="modal fade " role="dialog">
+                                    <div class="modal-dialog editUserInfoModal">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h3 class="modal-title">{{ account_settings }}</h3>
+                                            </div>
+                                            <div class="modal-body">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active"><a data-toggle="tab" href="#home">{{ edit_profile_tab }}</a></li>
+                                                    <li><a data-toggle="tab" href="#menu1">{{ change_pass_tab }}</a></li>
+                                                </ul>
+
+                                                <div class="tab-content">
+                                                    <div id="home" class="tab-pane fade in active">
+                                                        <table class="editTable">
+                                                            <tr class="editTableRow">
+                                                                <td><label for="username">{{ username_label }}</label></td>
+                                                                <td><input type="text" class="form-control editInput" id="username" value="{{ username }}"></td>
+                                                            </tr>
+                                                            <tr class="editTableRow">
+                                                                <td><label for="email">{{ email_label }}</label></td>
+                                                                <td><input type="text" class="form-control editInput" id="email" value="{{ email }}"></td>
+                                                            </tr>
+                                                            <tr class="editTableRow">
+                                                                <td><label for="about">{{ about_label }}</label></td>
+                                                                <td>
+                                                                    <textarea type="text" class="form-control" rows="6" id="about">{{ userAboutTpl }}</textarea>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="editTableRow">
+                                                                <td><label for="about">{{ language_label }}</label></td>
+                                                                <td>
+                                                                    <select class="form-control selectpicker" id="userlang">
+                                                                        <option value="en" data-icon="flag-icon flag-icon-gb">English</option>
+                                                                        <option value="pl" data-icon="flag-icon flag-icon-pl">Polski</option>
+                                                                        <option value="es" data-icon="flag-icon flag-icon-es">Español</option>
+                                                                        <option value="ru" data-icon="flag-icon flag-icon-ru">Русский</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <div class="modal-footer">
+                                                            <button type="button" onclick="editProfile()"class="btn btn-success pull-left">
+                                                                <p class="nopadding" id="editsavebtn">{{ save_btn }}</p>
+                                                                <img src="{{ asset ('images/buttonloader.gif') }}" hidden id="buttonloader">
+                                                            </button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">{{ close_btn }}</button>
+                                                        </div>
+                                                    </div>
+                                                    <!--CHANGE PASSWORD TAB-->
+                                                    <div id="menu1" class="tab-pane fade">
+                                                        <table class="editTable">
+                                                            <tr class="editTableRow">
+                                                                <td colspan="2">
+																	<div class="alert alert-success" id="success" hidden>
+																		<!--SUCCESS ALERT-->
+																	</div>
+                                                                    <div class="alert alert-danger" id="danger" hidden>
+																		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                                        <!--DANGER ALERT-->
+                                                                    </div>
+                                                                    <div class="alert alert-warning" id="warning" hidden>
+																		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                                        <!--WARNING ALERT-->
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="editTableRow">
+                                                                <td><label for="oldPassword">{{ old_pass_lbl }}</label></td>
+                                                                <td><input type="password" class="form-control editInput nopadding" id="oldPassword"></td>
+                                                            </tr>
+                                                            <tr class="editTableRow">
+                                                                <td><label for="newPassword">{{ new_pass_lbl }}</label></td>
+                                                                <td><input type="password" class="form-control editInput nopadding" id="newPassword"></td>
+                                                            </tr>
+                                                            <tr class="editTableRow">
+                                                                <td><label for="confimPassword">{{ confirm_pass_lbl }}</label></td>
+                                                                <td><input type="password" class="form-control editInput nopadding" id="confimPassword"></td>
+                                                            </tr>
+                                                        </table>
+                                                        <div class="modal-footer">
+                                                            <button type="button" onclick="changePass()" id="changePass" class="btn btn-success pull-left">{{ save_btn }}</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">{{ close_btn }}</button>
+                                                        </div>
+                                                        <script>
+                                                            function changePass() {
+                                                                var oldpass = $("#oldPassword").val();
+                                                                var newpass = $("#newPassword").val();
+                                                                var confpass = $("#confimPassword").val();
+                                                               // console.log(oldpass)
+                                                                $.ajax({
+                                                                    type: "post",
+                                                                    url: "{{path('instasaver_user_en_change_pass')}}",
+                                                                    data: {
+                                                                        oldPassword: oldpass,
+                                                                        newPassword: newpass,
+                                                                        confimPassword: confpass
+                                                                    },
+                                                                    success: function(data){
+                                                                       // console.log(data)
+                                                                        if (data == 'danger') {
+                                                                            $("#danger").attr('hidden', false);
+                                                                            $("#danger").html('<strong>{{ wrong_pass }}</strong><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>')
+                                                                        }
+                                                                        if (data == 'warning') {
+                                                                            $("#warning").attr('hidden', false);
+                                                                            $("#warning").html('<strong>{{ notmatch_pass }}</strong><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>')
+                                                                        }
+                                                                        if (data == 'success') {
+                                                                            $("#success").attr('hidden', false);
+                                                                            $("#success").html('<strong>{{ pass_change_success }}</strong><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>')
+                                                                        }
+                                                                    }
+                                                                });
+
+                                                            }
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    $(document).ready(function(){
+                                        $.ajax({
+                                            type: "post",
+                                            url: "{{ path ('instasaver_user_en_get_cur_lang') }}",
+                                            success: handlerData
+                                        });
+
+                                        function handlerData(data) {
+                                            var curLang = data;
+                                            console.log($("#userlang [value='"+curLang+"']").attr("selected", true));
+                                            $("#userlang").val(curLang).attr("selected", true);
+                                        }
+                                        //$("#userlang [value='ru']").attr("selected", true);
+                                        //$("#userlang option[value='ru']").attr('selected', true);
+                                    });
+
+                                    function editProfile() {
+                                        $("#editsavebtn").attr('hidden', true);
+                                        $("#buttonloader").attr('hidden', false);
+                                        var editUsername = $("#username").val();
+                                        var editEmail = $("#email").val();
+                                        var editAbout = $("#about").val();
+                                        var editUserlang = $("#userlang").val();
+                                        $.ajax ({
+                                            type: "post",
+                                            url: "{{path('instasaver_user_en_edit')}}",
+                                            data: {
+                                                username: editUsername,
+                                                email: editEmail,
+                                                about: editAbout,
+                                                lang: editUserlang
+                                            },
+                                            success: function(data){
+                                                location.reload();
+                                            }
+                                        });
+                                    }
+                                </script>
+                                <!--<button type="button" class="btn btn-link pull-left editbutton" data-toggle="modal" data-target="#modalSignUp">
+                                    <p class="text-center"><span class="glyphicon glyphicon-cog"></span>&nbsp;EDIT PROFILE</p>
+                                </button>-->
+                            {% endif %}
+                            {% if main_inf_btn == 0 %}
+                                <button type="button" class="btn btn-success followbutton btn-lg">
+                                    <p class="nopadding"><b>{{ follow }}</b></p>
+                                </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row subinfo nopadding">
+                <div class="col-xs-4" style="border-right: 1px solid white;">
+                    <p class="text-center upperText">9</p>
+                    <p class="text-center lowerText">{{ saved_photos }}</p>
+                </div>
+                <div class="col-xs-4" style="border-right: 1px solid white;">
+                    <p class="text-center upperText">4</p>
+                    <p class="text-center lowerText">Sample text</p>
+                </div>
+                <div class="col-xs-4">
+                    <p class="text-center upperText">4</p>
+                    <p class="text-center lowerText">Sample text</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var mySelect = $('#first-disabled2');
+
+            $('#special').on('click', function () {
+                mySelect.find('option:selected').prop('disabled', true);
+                mySelect.selectpicker('refresh');
+            });
+
+            $('#special2').on('click', function () {
+                mySelect.find('option:disabled').prop('disabled', false);
+                mySelect.selectpicker('refresh');
+            });
+
+            $('#basic2').selectpicker({
+                liveSearch: true,
+                maxOptions: 1
+            });
+        });
+    </script>
+    <div class="container photoblock">
+        <div class="row">
+            <div class="col-md-4 nopadding simplePhoto">
+				<img src="{{  asset('uploads/1.jpg') }}"  class="img-responsive">
+				<div class="saveAndShareBtns">
+					<button type="button" class="btn btn-success smallsavebtn">
+						<p><span class="glyphicon glyphicon-download"></span>&nbsp;DOWNLOAD</p>
+					</button>
+				</div>
+            </div>
+            <div class="col-md-4 nopadding simplePhoto" style="background-color: green;">
+				<img src="{{  asset('uploads/2.jpg') }}" style="width: 100%; height: 100%;">
+				<div class="saveAndShareBtns">
+					<button type="button" class="btn btn-success smallsavebtn">
+						<p><span class="glyphicon glyphicon-download"></span>&nbsp;DOWNLOAD</p>
+					</button>
+				</div>
+            </div>
+            <div class="col-md-4 nopadding simplePhoto" style="background-color: orange;">
+				<img src="{{  asset('uploads/3.jpg') }}" class="img-responsive">
+				<div class="saveAndShareBtns">
+					<button type="button" class="btn btn-success smallsavebtn">
+						<p><span class="glyphicon glyphicon-download"></span>&nbsp;DOWNLOAD</p>
+					</button>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div class="footer">
+        <h3>FOOTER</h3>
+    </div>
+{% endblock %}

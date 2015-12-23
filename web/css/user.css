@@ -8,6 +8,11 @@
     src: url("../fonts/segoeuil.ttf");
 }
 
+@font-face {
+    font-family: ostrich;
+    src: url("../fonts/galano.otf");
+}
+
 *{
     font-family:segoe;
 }
@@ -20,535 +25,115 @@ html, body {
     #background-size: cover;
 }
 
-	.wrapper {
-		display: table;
-		width: 100%;
-		height: 100%;
-		margin: 0 auto;
-		background: white;
-		font: 14px/20px Arial, sans-serif;
-
-	}
-
-	.nopadding {
-	   padding: 0 !important;
-	   margin: 0 !important;
-	}
-	
-	.header:before {
-		content: '';
-		display: inline-block;
-		height: 100%;
-		vertical-align: middle;
-	}
-	
-	.header {
-		text-align: center;
-		height: 80px;
-		#background: #0571a2;
-		background: #133f4f;
-		#background: linear-gradient(to top, #133f4f , #0073a3 );
-		/*padding: 0;*/
-	}
-
-	.topheader {
-		width: 60% !important;
-		position: relative;
-		height: 100%;
-		display: inline-block;
-		vertical-align: middle;
-		#border: 1px solid black !important;
-	}
-	
-	.col-centered{
-		padding-top: 1.5%;
-	}
-	
-	.downloadHeaderDiv {
-		#border: 1px solid black;
-		margin-top: -2%;
-	}
-	
-	.topheaderInner {
-		position: absolute;
-		width: 100%;
-		top: 35%;
-		margin-top: -0.625em;
-		#border: 1px solid red;
-		height: 50%;
-	}
-	
-	.test {
-		#border: 1px solid black;
-	}
-	
-	
-	.logo a {
-		font-family: instasaver;
-		color: whitesmoke;
-		font-size: 2.5em;
-		text-decoration: none; 
-	}
-	
-	.logo a:hover {
-		font-family: instasaver;
-		color: whitesmoke;
-		font-size: 2.5em;
-		text-decoration: none; 
-	}
-
-	.logout {
-		color: white !important;
-		font-size: 1.3em;
-		/*white-space: nowrap;*/
-	}
-	
-	.logout  a {
-		text-decoration: none;
-		color: whitesmoke;
-		/*white-space: nowrap;*/
-	}
-	
-	.logout  a:hover {
-		text-decoration: none;
-		color: whitesmoke;
-		/*white-space: nowrap;*/
-	}
-	
-	.buttonBox {
-		margin: -1.5% 0 0 0 !important;
-		padding: 0 0 0 0 !important;
-	}
-	
-	.content {
-		display: table-row;
-		height: 100%;
-		-webkit-border-radius: 8px;
-		-moz-border-radius: 8px;
-		border-radius: 8px;
-	}
-
-	.footer {
-		height: 80px;
-	}
-
-	.userinfo {
-		width: 100%;
-		padding: 1% 0 1% 0;
-		background-image: url("../images/user_bg.jpg");
-		background-size: cover;
-	}
-	
-	
-
-	.infoblock {
-		width: 60% !important; 
-		margin: 3% 0 4% 0;
-		#border: 1px solid black !important;
-	}
-
-	.photoblock {
-		width: 60% !important;
-		#margin: 3% 0 4% 0;,
-		border: 1px solid black !important;
-	}
-
-	#avatar {
-		width: 240px;
-		height: 240px;
-	}
-
-	.username {
-		font-size: 3em;
-		color: white;
-		margin: 0 0 0 5%;
-	}
-
-	.userInformation {
-		margin: 7% 0 0 5%;
-		font-size: 1.3em;
-		color: white;
-		
-	}
-	.maininfo {
-		border: 2px solid yellow;
-		width: 100%;
-	}
-	
-	.maininfoRow {
-		margin-bottom: 0.3%;
-		width: 100% !important;
-		#border: 2px solid yellow;
-	}
-	
-	
-	.editbutton {
-		text-decoration: none !important; 
-		margin: 4% 0 0 5%;
-		border: 2px solid whitesmoke !important;
-		#width: 50%;
-		-webkit-border-radius: 15px;
-		-moz-border-radius: 15px;
-		border-radius: 15px !important;
-		background-image: none !important;
-		background-color: transparent !important;
-		#background-color: #686868 !important;
-	}
-	
-	.editbutton p {
-		font-size: 1em;
-		color: whitesmoke;
-	}
-	
-	.editbutton:hover {
-		border: 2px solid #d9d9d9 !important;	
-	}
-	
-	.editbutton:hover p {
-		color: #d9d9d9;
-	}
-	
-	.followbutton {
-		background-image: none !important;
-		border: none !important;
-		background-color: transparent !important;
-		text-decoration: none !important; 
-		margin: 4% 0 0 5%;
-		padding-top: 2% !important;
-		font-size: 1.3em;
-		border: 2px solid #66bd2b !important;
-		-webkit-border-radius: 15px;
-		-moz-border-radius: 15px;
-		border-radius: 15px !important;
-		background-color: #66bd2b !important;
-	}
-	
-	.followbutton p {
-		font-size: 16px;
-		color: whitesmoke;
-	}
-	
-	.followbutton:hover {
-		background-color: #42bd2b !important;
-	}
-	
-	.maininfo {
-		padding: 0 0 7% 0;
-	}
-
-	.subinfo {
-		padding-top: 7% !important;
-		padding-bottom: 7% !important;
-		border-top: 1px solid white;
-		border-bottom: 1px solid white;
-	}
-
-	.upperText {
-		color: white;
-		font-size: 3em;
-		padding-bottom: 6%;
-	}
-
-	.lowerText {
-		color: white;
-		font-size: 1.3em;
-	}
-	
-	.editUserInfoModal {
-		width: 70% !important;
-		-webkit-border-radius: 0px !important;
-		-moz-border-radius: 0px !important;
-		border-radius: 0px !important; 
-	}
-	
-	.editInput {
-		width: 100% !important;
-	}
-	
-	.editTable {
-		#border: 1px solid black;
-		width: 100%;
-		
-	}
-	tr.editTableRow>td {
-		#border: 1px solid black;
-		padding: 1% 0 1% 0 !important;
-	}
-
-
-.cropit-image-preview {
-	background-color: #f8f8f8;
-	background-size: cover;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	margin-top: 7px;
-	width: 240px;
-	height: 240px;
-	cursor: move;
+.header-cont {
+    #border: 1px solid #000000;
+    width: 35% !important;
+    height: 100%;
 }
 
-.cropit-image-background {
-	opacity: .2;
-	cursor: auto;
+.header-row {
+    width: auto;
+    height: 100%;
 }
 
-.image-size-label {
-	margin-top: 10px;
+.content-cont {
+    border: 1px solid red !important;
+    width: 35% !important;
+    height: 100%;
 }
 
-input {
-	display: block;
+
+.footer-cont {
+    border: 1px solid red !important;
+    width: 35% !important;
+    height: 100%;
 }
 
-.export {
-	margin-top: 10px;
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-.saveAndShareBtns {
-	visibility: hidden;
+.wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    #background: #F5F7FA;
+    font: 14px/20px Arial, sans-serif;
 }
 
-.logoutico {
-	visibility: hidden;
+.header {
+    height: 50px;
+    background: #133f4f;
+    padding: 0 0;
 }
 
-.logoico {
-	visibility: hidden;
+.logo {
+    color: #ffffff;
+    font-size: 16pt;
+    padding: 12px 0 0 0;
+}
+
+.get-url-field {
+    padding: 7px 0;
+}
+
+.logout-button-col {
+    border: 1px solid gold;
+}
+
+.get-url-input {
+    border-radius: 0 !important;
+    outline: 0 !important;
+}
+
+
+.get-url-btn {
+    border-radius: 0 !important;
+}
+
+.content {
+    display: table-row;
+    height: 100%;
+}
+
+.footer {
+    height: 80px;
+    background: #3498DB;
+}
+
+.logout-button {
+    height: 50px !important;
+    width: 80px !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    background: none !important;
+    text-shadow: 0 0 0  !important;
+    border: 0 !important;
+    box-shadow: 0 !important;
+    color: white !important;
+    margin: 0 auto;
+}
+
+.logout-button:hover {
+    background: #184f64 !important;
 }
 /*==================== MEDIA SCREEN BLOCK ====================*/
 
 /*MEDIA SCREEN FOR NETBOOKS, LAPTOPS, SCREENS*/
 @media screen and(min-width: 769px) and (max-width: 992px) {
-	.saveAndShareBtns {
-		 display: none !important;
-	}
+
 }
 
 /*MEDIA SETTINGS FOR TABLETS*/
 @media screen and (max-width: 768px) and (min-width: 482px) {
-	.header:before {
-		content: '';
-		display: inline-block;
-		height: 2%;
-		vertical-align: middle;
-	}
 
-	.topheader {
-		width: 100% !important;
-		position: relative;
-		height: 100%;
-		display: inline-block;
-		vertical-align: middle;
-		#border: 1px solid black !important;
-		top: -25% !important;
-	}
-
-	.topheaderInner {
-		position: absolute;
-		width: 100% !important;
-		top: 50%;
-		margin-top: -0.625em;
-		#border: 1px solid red;
-	}
-
-	.maininfoRow {
-		width: 60% !important;
-		padding: 0 0 5% 0;
-		#border: 1px solid black !important;
-		#margin-left: 2em;
-		float: right !important;
-	}
-
-	.infoblock {
-		width: 100% !important;
-		#border: 1px solid black !important;
-	}
-
-	#avatar {
-		width: 15em;
-		height: 15em;
-	}
-
-	.editUserInfoModal {
-		width: 100% !important;
-		-webkit-border-radius: 0px !important;
-		-moz-border-radius: 0px !important;
-		border-radius: 0px !important;
-	}
-	
-	.photoblock {
-		width: 100% !important;
-	}
-	
-	.simplePhoto {
-		width: 100%;
-		height: 100%;
-	}
 
 }
 
 /*MEDIA SETTINGS FOR SMARTPHONES*/
 @media screen and (max-width: 480px) {
-	.header:before {
-		content: '';
-		display: inline-block;
-		height: 1%;
-		vertical-align: middle;
-	}
 
-	.topheader {
-		width: 100% !important;
-		position: relative;
-		height: 100%;
-		display: inline-block;
-		vertical-align: middle;
-		#border: 1px solid black !important;
-		top: -25% !important;
-	}
-
-	.topheaderInner {
-		position: absolute;
-		top: 45%;
-		margin-top: -0.625em;
-		#border: 1px solid red;
-	}
-
-	.editbutton {
-		margin-left: .7em;
-	}
-	.editbutton p {
-		font-size: 0.8em;
-		color: whitesmoke;
-	}
-	
-	.userinfo {
-		border: 2px solid red;
-	}
-	
-	.subinfo {
-		border: 2px solid green;
-	}
-	
-	.maininfo {
-		border: 1px solid red;
-		width: 100% !important;
-		margin-left: 5%;
-	}
-	.maininfoRow {
-		margin-bottom: 2%;
-		padding: 0 !important;
-		margin-left: 2em;
-		width: 88% !important;
-	}
-	
-	.buttonBox {
-		margin: 0 0 0 0 !important;
-		padding: 0 0 0 0 !important;
-	}
-	
-	.upperText {
-		color: white;
-		font-size: 2.5em;
-		padding-bottom: 2%;
-	}
-	
-	.lowerText {
-		color: white;
-		font-size: 1em;
-	}
-
-	.username {
-		font-size: 2em;
-		margin: 0 0 0 5%;
-	}
-	
-	.logo-left-text {
-		font-family: instasaver;
-		font-size: 40px;
-		color: whitesmoke;
-		text-shadow: 1px 1px 1px black;
-		margin-top: 10%;
-	}
-	
-	.logoText {
-		padding-top: 1%;
-	}
-	
-	.userinfo {
-		width: 100%;
-		background-image: url("../images/user_bg.jpg");
-		background-size: cover;
-		padding: 1% 0 1% 0;
-	}
-
-	.infoblock {
-		width: 100% !important; 
-		margin: 7% 0 7% 0;
-	}
-	#avatar {
-		width: 7em;
-		height: 7em;
-	}
-	
-	.editUserInfoModal {
-		width: 100% !important;
-		-webkit-border-radius: 0px !important;
-		-moz-border-radius: 0px !important;
-		border-radius: 0px !important; 
-	}
-	
-	.photoblock {
-		width: 100% !important;
-	}
-	
-	.simplePhoto {
-		width: 100%;
-		height: 100%;
-		margin-bottom: 5% !important;
-	}
-	
-	.saveAndShareBtns {
-		visibility: visible;
-	}
-	
-	.smallsavebtn {
-		width: 100% !important;
-border-radius: 0 0 0 0 !important;		
-	}
-	
-	.smallsavebtn p {
-		padding: 3% 0 3% 0;
-		font-size: 1.75em;
-	}
-	
-	.logoutico {
-		visibility: visible;
-		color: white;
-		font-size: 1.8em;
-	}
-	
-	.logout {
-		visibility: hidden;
-	}
-	
-	.logo {
-		visibility: hidden;
-	}
-	
-	.logoico {
-		visibility: visible;
-		width: 24px;
-		height: 24px;
-		position: absolute;
-		top: 5%;
-	}
-	
-	.downloadHeader {
-		height: 26px !important;
-		width: 100% !important;
-	}
-	
-	.downloadHeaderBtn {
-		height: 26px !important;
-	}
 }
