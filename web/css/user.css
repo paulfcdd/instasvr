@@ -62,7 +62,7 @@ html, body {
 }
 
 .get-url-field {
-    padding: 2% 0 0 0 !important;
+    padding: 8px 0 0 0 !important;
 }
 
 .logout-button {
@@ -93,18 +93,20 @@ html, body {
 .content-cont {
     border-left: 2px solid #d9e0e7    !important;
     border-right: 2px solid #d9e0e7    !important;
+    border-bottom: 2px solid #d9e0e7    !important;
     width: 50% !important;
     height: 100%;
 }
 
 .top-info-row {
 	border-bottom: 2px solid #d9e0e7   !important;
+    padding: 20px 0 10px 0 !important;
 }
 
 #avatar {
 	width: 170px;
 	height: 170px;
-	margin-top: 15% !important;
+	#margin-top: 20px !important;
 	margin-left: 5% !important;
 }
 .avatar-part {
@@ -163,10 +165,43 @@ input {
 	margin-top: 10px;
 }
 /*end of the style for avatar uploader*/
+ /*edit page modal window*/
+.editUserInfoModal {
+    width: 70% !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
 
+.editInput {
+    width: 100% !important;
+}
+
+.editTable {
+    #border: 1px solid black;
+    width: 100%;
+
+}
+tr.editTableRow>td {
+    #border: 1px solid black;
+    padding: 1% 0 1% 0 !important;
+}
+
+.insta-link-td {
+    white-space: nowrap;
+}
+
+.photo-block {
+    margin-top: 2% !important;
+}
+
+.single-photo {
+    width: 250px !important;
+    height: 250px !important;
+}
 /*-------END OF CONTENT PART-----*/
 .footer-cont {
-    border: 1px solid red !important;
+    #border: 1px solid red !important;
     width: 50% !important;
     height: 100%;
 }
@@ -192,7 +227,7 @@ input {
 
 .footer {
     height: 80px;
-    background: #3498DB;
+    #background: #3498DB;
 }
 /*==================== MEDIA SCREEN BLOCK ====================*/
 
@@ -217,7 +252,7 @@ input {
     .header-cont {
         width: 100% !important;
         height: 50px !important;
-        border: 1px solid green !important;
+        #border: 1px solid green !important;
     }
     .header-cols {
         #border: 1px solid red !important;
@@ -230,7 +265,7 @@ input {
         font-size: 2em;
     }
 	.get-url-field {
-		margin: 3% 0 0 0 !important;
+		margin: -1px 0 0 0 !important;
 	}
 	
 	.logout-button {
@@ -270,7 +305,7 @@ input {
 	
 	/*-------CONTENT PART-------------*/
 	.content-cont {
-		border: 1px solid red !important;
+		#border: 1px solid red !important;
 		width: 100% !important;
 		height: 100%;
 	}
@@ -281,12 +316,12 @@ input {
 	}
 
 	.avatar-part {
-		border: 1px solid yellow;
+		#border: 1px solid yellow;
 		width: 50% !important;
 }
 
 	.userinfo-part {
-		border: 1px solid yellow;
+		#border: 1px solid yellow;
 		width: 50% !important;
 	}
 	
@@ -298,5 +333,20 @@ input {
 		border-radius: 0 !important;
 	}
 
+    /*user modal edit*/
+    .editUserInfoModal {
+        width: 100% !important;
+        -webkit-border-radius: 0px !important;
+        -moz-border-radius: 0px !important;
+        border-radius: 0px !important;
+    }
+
+    .single-photo {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
 	/*-------END OF CONTENT PART-----*/
+
+
 }

@@ -10,6 +10,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
+include_once ("simple_html_dom.php");
+
+
 class UserEnController extends Controller {
 
 	public function indexAction($id_num) {
@@ -47,10 +50,6 @@ class UserEnController extends Controller {
 		);
 		$userTableInfo = $query->getSingleResult();
 		$userAbout = $userTableInfo->getUserAbout();
-
-		//$array = (array) $userTableInfo;
-		//var_dump($userTableInfo);
-		//var_dump($user->getUserAvatar());
 		if ($userAbout == null) {
 			$userAboutTpl = '';
 		} else {
@@ -59,7 +58,7 @@ class UserEnController extends Controller {
 
 		switch ($userLang) {
 			case 'en':
-				return $this->render('::user.html - kopia.twig', array (
+				return $this->render('::user.html.twig', array (
 					'username'				=> $userTableInfo->getUsername(),
 					'logout'				=> 'Logout',
 					'main_inf_btn'			=> $mainInfBtn,
@@ -83,7 +82,8 @@ class UserEnController extends Controller {
 					'wrong_pass'			=> 'Old password is incorrect!',
 					'notmatch_pass'			=> 'Сheck the correctness of the password',
 					'pass_change_success'	=> 'Password was changed successfully!',
-					'avatar'				=> $user->getUserAvatar()
+					'avatar'				=> $user->getUserAvatar(),
+                    'instagram_link'        => 'You\'re Instagram username'
 				));
 				break;
 			case 'pl':
@@ -107,11 +107,12 @@ class UserEnController extends Controller {
 					'new_pass_lbl' 			=> 'Nowe hasło',
 					'confirm_pass_lbl' 		=> 'potwierdź hasło',
 					'follow' 				=> 'ŚLEDZIĆ',
-					'saved_photos' 			=> 'Instasavewów',
+					'saved_photos' 			=> 'Instasejwów',
 					'wrong_pass'			=> 'Podane stare hasło nie jest poprawne!',
 					'notmatch_pass'			=> 'Sprawdz poprawność podanego hasła',
 					'pass_change_success'	=> 'Hasło zostało zmienione pomyślnie!',
-					'avatar'				=> $user->getUserAvatar()
+					'avatar'				=> $user->getUserAvatar(),
+                    'instagram_link'        => 'Twój login w Instagram'
 				));
 				break;
 			case 'ru':
@@ -139,7 +140,8 @@ class UserEnController extends Controller {
 					'wrong_pass'			=> 'Неверно указан старый пароль!',
 					'notmatch_pass'			=> 'Проверьте правильность ввода пароля',
 					'pass_change_success'	=> 'Пароль был успешно сменен!',
-					'avatar'				=> $user->getUserAvatar()
+					'avatar'				=> $user->getUserAvatar(),
+                    'instagram_link'        => 'Ваш логин в Инстаграм'
 				));
 				break;
 			case 'es':
@@ -167,13 +169,11 @@ class UserEnController extends Controller {
 					'wrong_pass'			=> 'Antiguo contraseña es incorrecta!',
 					'notmatch_pass'			=> 'Comprobar la exactitud de la contraseña',
 					'pass_change_success'	=> 'La contraseña se cambió correctamente!',
-					'avatar'				=> $user->getUserAvatar()
+					'avatar'				=> $user->getUserAvatar(),
+                    'instagram_link'        => 'You\'re Instagram username'
 				));
 				break;
 		}
-
-		//return new Response('Hello, '.$username[0]->getUsername());
-
 	}
 
 	public function editProfileAction() {

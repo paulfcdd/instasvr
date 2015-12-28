@@ -7,6 +7,7 @@
         <link rel="shortcut icon" href="{{ asset('images/icon.ico') }}">
         <link rel="stylesheet" href="{{ asset('css/user.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('css/croppie.css') }}" type="text/css">
+        {#<link rel="stylesheet" href="{{ asset('css/thumbnail-gallery.css') }}" type="text/css">#}
         <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css">
@@ -16,6 +17,7 @@
         <link rel="stylesheet" href="{{ asset('select/dist/css/bootstrap-select.css') }}" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('select/dist/js/bootstrap-select.js') }}"></script>
         <script src="{{ asset('js/croppie.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/jquery.js')}}"></script>
 	</head>
@@ -144,15 +146,234 @@
 							  </tr>
 							  <tr>
 								<td>
-									<button type="button" class="btn btn-primary settings-btn">
+									<button type="button" class="btn btn-primary settings-btn" data-toggle="modal" data-target="#editModal">
 										<span class="glyphicon glyphicon-cog"></span>&nbsp;{{edit_profile}}
 									</button>
 								</td>
 							  </tr>
 							</tbody>
 						</table>
+                        <div id="editModal" class="modal fade " role="dialog">
+                            <div class="modal-dialog editUserInfoModal">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h3 class="modal-title">{{ account_settings }}</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a data-toggle="tab" href="#home">{{ edit_profile_tab }}</a></li>
+                                            <li><a data-toggle="tab" href="#menu1">{{ change_pass_tab }}</a></li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <div id="home" class="tab-pane fade in active">
+                                                <table class="editTable">
+                                                    <tr class="editTableRow">
+                                                        <td><label for="username">{{ username_label }}</label></td>
+                                                        <td><input type="text" class="form-control editInput" id="username" value="{{ username }}"></td>
+                                                    </tr>
+                                                    <tr class="editTableRow ">
+                                                        <td><label for="email">{{ email_label }}</label></td>
+                                                        <td><input type="text" class="form-control editInput " id="email" value="{{ email }}"></td>
+                                                    </tr>
+                                                    <tr class="editTableRow">
+                                                        <td><label for="about">{{ about_label }}</label></td>
+                                                        <td>
+                                                            <textarea type="text" class="form-control" rows="6" id="about">{{ userAboutTpl }}</textarea>
+                                                        </td>
+                                                    </tr>
+                                                    {#<tr class="editTableRow ">#}
+                                                        {#<td class="nopadding"><label for="email">{{ instagram_link }}</label></td>#}
+                                                        {#<td class="nopadding insta-link-td">#}
+                                                            {#<label for="insta-username">instagram.com/</label>#}
+                                                            {#<input type="text" class="form-control editInput " id="email" value="{{ email }}">#}
+                                                        {#</td>#}
+                                                        {#<td><input type="text" class="form-control editInput " id="email" value="{{ email }}"></td>#}
+                                                    {#</tr>#}
+                                                    <tr class="editTableRow">
+                                                        <td><label for="about">{{ language_label }}</label></td>
+                                                        <td>
+                                                            <select class="form-control selectpicker" id="userlang">
+                                                                <option value="en" data-icon="flag-icon flag-icon-gb">English</option>
+                                                                <option value="es" data-icon="flag-icon flag-icon-es">Español</option>
+                                                                <option value="pl" data-icon="flag-icon flag-icon-pl">Polski</option>
+                                                                <option value="ru" data-icon="flag-icon flag-icon-ru">Русский</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <div class="modal-footer">
+                                                    <button type="button" onclick="editProfile()"class="btn btn-success pull-left">
+                                                        <p class="nopadding" id="editsavebtn">{{ save_btn }}</p>
+                                                        <img src="{{ asset ('images/buttonloader.gif') }}" hidden id="buttonloader">
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{ close_btn }}</button>
+                                                </div>
+                                            </div>
+                                            <!--CHANGE PASSWORD TAB-->
+                                            <div id="menu1" class="tab-pane fade">
+                                                <table class="editTable">
+                                                    <tr class="editTableRow">
+                                                        <td colspan="2">
+                                                            <div class="alert alert-success" id="success" hidden>
+                                                                <!--SUCCESS ALERT-->
+                                                            </div>
+                                                            <div class="alert alert-danger" id="danger" hidden>
+                                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                                <!--DANGER ALERT-->
+                                                            </div>
+                                                            <div class="alert alert-warning" id="warning" hidden>
+                                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                                <!--WARNING ALERT-->
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="editTableRow">
+                                                        <td><label for="oldPassword">{{ old_pass_lbl }}</label></td>
+                                                        <td><input type="password" class="form-control editInput nopadding" id="oldPassword"></td>
+                                                    </tr>
+                                                    <tr class="editTableRow">
+                                                        <td><label for="newPassword">{{ new_pass_lbl }}</label></td>
+                                                        <td><input type="password" class="form-control editInput nopadding" id="newPassword"></td>
+                                                    </tr>
+                                                    <tr class="editTableRow">
+                                                        <td><label for="confimPassword">{{ confirm_pass_lbl }}</label></td>
+                                                        <td><input type="password" class="form-control editInput nopadding" id="confimPassword"></td>
+                                                    </tr>
+                                                </table>
+                                                <div class="modal-footer">
+                                                    <button type="button" onclick="changePass()" id="changePass" class="btn btn-success pull-left">{{ save_btn }}</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{ close_btn }}</button>
+                                                </div>
+                                                <script>
+                                                    function changePass() {
+                                                        var oldpass = $("#oldPassword").val();
+                                                        var newpass = $("#newPassword").val();
+                                                        var confpass = $("#confimPassword").val();
+                                                        // console.log(oldpass)
+                                                        $.ajax({
+                                                            type: "post",
+                                                            url: "{{path('instasaver_user_en_change_pass')}}",
+                                                            data: {
+                                                                oldPassword: oldpass,
+                                                                newPassword: newpass,
+                                                                confimPassword: confpass
+                                                            },
+                                                            success: function(data){
+                                                                // console.log(data)
+                                                                if (data == 'danger') {
+                                                                    $("#danger").attr('hidden', false);
+                                                                    $("#danger").html('<strong>{{ wrong_pass }}</strong><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>')
+                                                                }
+                                                                if (data == 'warning') {
+                                                                    $("#warning").attr('hidden', false);
+                                                                    $("#warning").html('<strong>{{ notmatch_pass }}</strong><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>')
+                                                                }
+                                                                if (data == 'success') {
+                                                                    $("#success").attr('hidden', false);
+                                                                    $("#success").html('<strong>{{ pass_change_success }}</strong><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>')
+                                                                }
+                                                            }
+                                                        });
+
+                                                    }
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            $(document).ready(function(){
+                                $.ajax({
+                                    type: "post",
+                                    url: "{{ path ('instasaver_user_en_get_cur_lang') }}",
+                                    success: handlerData
+                                });
+
+                                function handlerData(data) {
+                                    var curLang = data;
+                                    console.log($("#userlang [value='"+curLang+"']").attr("selected", true));
+                                    $("#userlang").val(curLang).attr("selected", true);
+                                }
+                                //$("#userlang [value='ru']").attr("selected", true);
+                                //$("#userlang option[value='ru']").attr('selected', true);
+                            });
+
+                            function editProfile() {
+                                $("#editsavebtn").attr('hidden', true);
+                                $("#buttonloader").attr('hidden', false);
+                                var editUsername = $("#username").val();
+                                var editEmail = $("#email").val();
+                                var editAbout = $("#about").val();
+                                var editUserlang = $("#userlang").val();
+                                $.ajax ({
+                                    type: "post",
+                                    url: "{{path('instasaver_user_en_edit')}}",
+                                    data: {
+                                        username: editUsername,
+                                        email: editEmail,
+                                        about: editAbout,
+                                        lang: editUserlang
+                                    },
+                                    success: function(data){
+                                        location.reload();
+                                    }
+                                });
+                            }
+                        </script>
 					</div>
 				</div>
+                <div class="row photo-block">
+                    <div class="col-md-4 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive single-photo" src="https://scontent-waw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/1516156_1837723163129649_775327834_n.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive single-photo" src="https://scontent-waw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/1516156_1837723163129649_775327834_n.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive single-photo" src="https://scontent-waw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/1516156_1837723163129649_775327834_n.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive single-photo" src="https://scontent-waw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/1516156_1837723163129649_775327834_n.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive single-photo" src="https://scontent-waw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/1516156_1837723163129649_775327834_n.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive single-photo" src="https://scontent-waw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/1516156_1837723163129649_775327834_n.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive single-photo" src="https://scontent-waw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/1516156_1837723163129649_775327834_n.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive single-photo" src="https://scontent-waw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/1516156_1837723163129649_775327834_n.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive single-photo" src="https://scontent-waw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/1516156_1837723163129649_775327834_n.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     {% endblock %}
@@ -170,27 +391,28 @@
 						//$(".logo").html('<p class=\"text-left logo-text\">Instasaver</p>');
                     }
                 </script>
+                <script>
+                    $(document).ready(function () {
+                        var mySelect = $('#first-disabled2');
+
+                        $('#special').on('click', function () {
+                            mySelect.find('option:selected').prop('disabled', true);
+                            mySelect.selectpicker('refresh');
+                        });
+
+                        $('#special2').on('click', function () {
+                            mySelect.find('option:disabled').prop('disabled', false);
+                            mySelect.selectpicker('refresh');
+                        });
+
+                        $('#basic2').selectpicker({
+                            liveSearch: true,
+                            maxOptions: 1
+                        });
+                    });
+                </script>
                 <div class="container footer-cont"></div>
             </div>
             {% endblock %}
     </div>
 {% endblock %}
-
-{#{% block header%}#}
-    {#<div class="header">#}
-
-    {#</div>#}
-{#{% endblock %}#}
-{#{% block content %}#}
-    {#<div class="wrapper">#}
-
-    {#</div>#}
-
-
-{#{% endblock %}#}
-
-{#{% block footer %}#}
-    {#<div class="footer">#}
-        {#<h3>FOOTER</h3>#}
-    {#</div>#}
-{#{% endblock %}#}
