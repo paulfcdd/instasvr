@@ -41,11 +41,6 @@ class UserEnController extends Controller {
 			throw $this->createNotFoundException('No user found for id '.$id_num);
 		}
 
-
-
-
-
-
 		$em = $this->getDoctrine()->getEntityManager();
 		$query = $em->createQuery(
 			"SELECT username FROM InstasaverIndexEnBundle:User username WHERE username.id = $id_num"
@@ -64,7 +59,7 @@ class UserEnController extends Controller {
 
 		switch ($userLang) {
 			case 'en':
-				return $this->render('::user.html.twig', array (
+				return $this->render('::user.html - kopia.twig', array (
 					'username'				=> $userTableInfo->getUsername(),
 					'logout'				=> 'Logout',
 					'main_inf_btn'			=> $mainInfBtn,

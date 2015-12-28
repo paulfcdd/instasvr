@@ -24,28 +24,150 @@ html, body {
     #background-image: url("../images/background.jpg");
     #background-size: cover;
 }
+/*-------HEADER PART-------*/
+.header {
+    #background: #133f4f;
+    background: #344352;
+    padding: 0 0;
+    height: 50px;
+}
 
 .header-cont {
-    #border: 1px solid #000000;
-    width: 35% !important;
-    height: 100%;
+    width: 50% !important;
+    height: 50px !important;
+    #border: 1px solid green !important;
 }
 
-.header-row {
-    width: auto;
-    height: 100%;
+.header-cols {
+    #border: 1px solid red !important;
+    #color: white;
+    height: 50px !important;
 }
 
+.logo-text {
+    font-size: 1.7em;
+    color: #f5f5f5;
+    padding: 10% 0 0 0 !important;
+    visibility: visible;
+}
+
+.logo-img {
+	width: 40px;
+	height: 40px;
+	margin-top: 4% !important;
+	}
+
+.logo-image {
+    visibility: hidden;
+}
+
+.get-url-field {
+    padding: 2% 0 0 0 !important;
+}
+
+.logout-button {
+    height: 50px !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    background: none !important;
+    text-shadow: 0 0 0  !important;
+    border: 0 !important;
+    box-shadow: 0 !important;
+    color: white !important;
+    margin: 0 auto;
+    visibility: visible;
+}
+
+.logout-button:hover {
+    #background: #184f64 !important;
+    background: #43576a !important;
+}
+
+.logout-button-small {
+    visibility: hidden;
+}
+/*-------END OF HEADER PART-------*/
+
+/*-------CONTENT PART-------------*/
 .content-cont {
-    border: 1px solid red !important;
-    width: 35% !important;
+    border-left: 2px solid #d9e0e7    !important;
+    border-right: 2px solid #d9e0e7    !important;
+    width: 50% !important;
     height: 100%;
 }
 
+.top-info-row {
+	border-bottom: 2px solid #d9e0e7   !important;
+}
 
+#avatar {
+	width: 170px;
+	height: 170px;
+	margin-top: 15% !important;
+	margin-left: 5% !important;
+}
+.avatar-part {
+	#border: 1px solid yellow;
+	width: 30% !important;
+}
+
+.userinfo-part {
+	#border: 1px solid yellow;
+	width: 70% !important;
+	padding: 10% 10% 10% 10%;
+}
+
+.user-info-tbl {
+	height: 100% !important;
+}
+
+.table td {
+	border: none !important;
+}
+
+.settings-btn {
+	height: 50px !important;
+	width: 200px !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+	font-size: 25px;
+}
+/*style for avatar uploader*/
+.cropit-image-preview {
+	background-color: #f8f8f8;
+	background-size: cover;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-top: 7px;
+	width: 240px;
+	height: 240px;
+	cursor: move;
+}
+
+.cropit-image-background {
+	opacity: .2;
+	cursor: auto;
+}
+
+.image-size-label {
+	margin-top: 10px;
+}
+
+input {
+	display: block;
+}
+
+.export {
+	margin-top: 10px;
+}
+/*end of the style for avatar uploader*/
+
+/*-------END OF CONTENT PART-----*/
 .footer-cont {
     border: 1px solid red !important;
-    width: 35% !important;
+    width: 50% !important;
     height: 100%;
 }
 
@@ -63,36 +185,6 @@ html, body {
     font: 14px/20px Arial, sans-serif;
 }
 
-.header {
-    height: 50px;
-    background: #133f4f;
-    padding: 0 0;
-}
-
-.logo {
-    color: #ffffff;
-    font-size: 16pt;
-    padding: 12px 0 0 0;
-}
-
-.get-url-field {
-    padding: 7px 0;
-}
-
-.logout-button-col {
-    border: 1px solid gold;
-}
-
-.get-url-input {
-    border-radius: 0 !important;
-    outline: 0 !important;
-}
-
-
-.get-url-btn {
-    border-radius: 0 !important;
-}
-
 .content {
     display: table-row;
     height: 100%;
@@ -101,24 +193,6 @@ html, body {
 .footer {
     height: 80px;
     background: #3498DB;
-}
-
-.logout-button {
-    height: 50px !important;
-    width: 80px !important;
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    border-radius: 0 !important;
-    background: none !important;
-    text-shadow: 0 0 0  !important;
-    border: 0 !important;
-    box-shadow: 0 !important;
-    color: white !important;
-    margin: 0 auto;
-}
-
-.logout-button:hover {
-    background: #184f64 !important;
 }
 /*==================== MEDIA SCREEN BLOCK ====================*/
 
@@ -130,10 +204,99 @@ html, body {
 /*MEDIA SETTINGS FOR TABLETS*/
 @media screen and (max-width: 768px) and (min-width: 482px) {
 
-
 }
 
 /*MEDIA SETTINGS FOR SMARTPHONES*/
 @media screen and (max-width: 480px) {
+	/*-------HEADER PART-------*/
+    .header {
+        background: #133f4f;
+        padding: 0 0;
+        height: 50px;
+    }
+    .header-cont {
+        width: 100% !important;
+        height: 50px !important;
+        border: 1px solid green !important;
+    }
+    .header-cols {
+        #border: 1px solid red !important;
+        #color: white;
+        height: 50px !important;
+    }
 
+    .span-btn {
+        margin: auto;
+        font-size: 2em;
+    }
+	.get-url-field {
+		margin: 3% 0 0 0 !important;
+	}
+	
+	.logout-button {
+		height: 50px !important;
+		-webkit-border-radius: 0 !important;
+		-moz-border-radius: 0 !important;
+		border-radius: 0 !important;
+		background: none !important;
+		text-shadow: 0 0 0  !important;
+		border: 0 !important;
+		box-shadow: 0 !important;
+		color: white !important;
+		margin: 0 auto;
+		visibility: visible;
+	}
+	
+	.logout-button:hover {
+		background: #184f64 !important;
+		height: 49px !important;
+		-webkit-border-radius: 0 !important;
+		-moz-border-radius: 0 !important;
+		border-radius: 0 !important;
+		text-shadow: 0 0 0  !important;
+		border: 0 !important;
+		box-shadow: 0 !important;
+		color: white !important;
+		margin: 0 auto;
+		visibility: visible;
+	}
+	
+	.logo-img {
+		width: 45px;
+		height: 45px;
+		margin-left: 10% !important;
+	}
+	/*-------END OF HEADER PART-------*/
+	
+	/*-------CONTENT PART-------------*/
+	.content-cont {
+		border: 1px solid red !important;
+		width: 100% !important;
+		height: 100%;
+	}
+
+	#avatar {
+		width: 150px;
+		height: 150px;
+	}
+
+	.avatar-part {
+		border: 1px solid yellow;
+		width: 50% !important;
+}
+
+	.userinfo-part {
+		border: 1px solid yellow;
+		width: 50% !important;
+	}
+	
+	.settings-btn {
+		height: 50px !important;
+		width: auto !important;
+		-webkit-border-radius: 0 !important;
+		-moz-border-radius: 0 !important;
+		border-radius: 0 !important;
+	}
+
+	/*-------END OF CONTENT PART-----*/
 }

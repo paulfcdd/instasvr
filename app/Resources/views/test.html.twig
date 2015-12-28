@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ username }}</title>
         <link rel="shortcut icon" href="{{ asset('images/icon.ico') }}">
-        <link rel="stylesheet" href="{{ asset('css/user.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/user_old.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('css/croppie.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
@@ -20,50 +20,28 @@
         <script type="text/javascript" src="{{ asset('js/jquery.js')}}"></script>
 	</head>
 {% endblock %}
-{% block wrapper %}
-    <div class="wrapper">
-    {% block header %}
-        <div class="header">
-            <div class="container header-cont">
-                <div class="row header-row">
-                    <div class="col-xs-2 nopadding logo header-cols">
-                        
-                    </div>
-                    <div class="col-xs-8 header-cols">
-                        <div class="input-group get-url-field pull-right">
-                            <input type="text" class="form-control get-url-input" placeholder="Search for...">
-                             <span class="input-group-btn ">
-                                <button class="btn btn-default get-url-btn" type="button">
-                                    <span class="glyphicon glyphicon-download"></span>
-                                </button>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col-xs-2 nopadding header-cols">
-                        <button class="btn btn-default logout-button pull-right">
-                        </button>
-                    </div>
+{% block header%}
+    
+{% endblock %}
+{% block content %}
+    <div class="userinfo">
+        <div class="container infoblock">
+            <div class="row maininfo">
+
+                <div class="col-xs-3">
+					{% if avatar == '' %}
+                        <img  class="img-circle" src="{{ asset('images/avatar.png') }}" onmouseover="pointerOn()" onmouseleave="pointerOff()"
+                              id="avatar" data-toggle="modal" data-target="#editPhoto">
+					{% endif %}
+					
+					{% if not avatar == '' %}
+						<img  class="img-circle" src="{{ asset( avatar ) }}" onmouseover="pointerOn()" onmouseleave="pointerOff()"
+						id="avatar" data-toggle="modal" data-target="#editPhoto">
+					{% endif %}
+                    <!---->
+                    
                 </div>
-            </div>
-        </div>
-    {% endblock %}
-    {% block content %}
-        <div class="content">
-            <div class="container content-cont">
-                <div class="row top-info-row">
-					<div class="col-xs-6 nopadding avatar-part">
-						<!--IF USER HAVE NO AVATAR-->
-						{% if avatar == '' %}
-							<img  class="img-circle" src="{{ asset('images/avatar.png') }}" onmouseover="pointerOn()" onmouseleave="pointerOff()"
-								  id="avatar" data-toggle="modal" data-target="#editPhoto">
-						{% endif %}
-						<!--IF AVATAR IS EXIST-->
-						{% if not avatar == '' %}
-							<img  class="img-circle" src="{{ asset( avatar ) }}" onmouseover="pointerOn()" onmouseleave="pointerOff()"
-							id="avatar" data-toggle="modal" data-target="#editPhoto">
-						{% endif %}			
-					</div>
-					<script>
+				<script>
 					function pointerOn() {
 						$("#avatar").css('cursor', 'pointer');
 					}
@@ -129,68 +107,13 @@
 						</div>
 					</div>
 				</div>
-					<div class="col-xs-6 nopadding userinfo-part" style="">
-						<table class="table user-info-tbl">
-							<tbody>
-							  <tr>
-								<td>
-									<h3><b>{{username}}</b></h3>
-								</td>
-							  </tr>
-							  <tr>
-								<td>
-									<h4>{{userAboutTpl}}</h4>
-								</td>
-							  </tr>
-							  <tr>
-								<td>
-									<button type="button" class="btn btn-primary settings-btn">
-										<span class="glyphicon glyphicon-cog"></span>&nbsp;{{edit_profile}}
-									</button>
-								</td>
-							  </tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
             </div>
         </div>
-    {% endblock %}
-        {% block footer %}
-            <div class="footer">
-                <script>
-                    $screenWidth = $(window).width();
-                    if ($screenWidth <= 480) {
-                        $(".logout-button").html('<span class=\"glyphicon glyphicon-log-out span-btn nopadding\"></span>');		
-						$(".logo").html('<img src="{{ asset('images/whitelogo.png')}}" class="logo-img pull-center">');
-					}
-					else {
-                        $(".logout-button").html('{{ logout }}');
-						$(".logo").html('<img src="{{ asset('images/whitelogo.png')}}" class="logo-img pull-center">');
-						//$(".logo").html('<p class=\"text-left logo-text\">Instasaver</p>');
-                    }
-                </script>
-                <div class="container footer-cont"></div>
-            </div>
-            {% endblock %}
     </div>
 {% endblock %}
 
-{#{% block header%}#}
-    {#<div class="header">#}
-
-    {#</div>#}
-{#{% endblock %}#}
-{#{% block content %}#}
-    {#<div class="wrapper">#}
-
-    {#</div>#}
-
-
-{#{% endblock %}#}
-
-{#{% block footer %}#}
-    {#<div class="footer">#}
-        {#<h3>FOOTER</h3>#}
-    {#</div>#}
-{#{% endblock %}#}
+{% block footer %}
+    <div class="footer">
+        <h3>FOOTER</h3>
+    </div>
+{% endblock %}
